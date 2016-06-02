@@ -1,0 +1,162 @@
+##############################################
+# tracking config file, used to define robots
+# ignored HTTP_USER_AGENT
+# -: part of useragent
+# ~: full of useragent
+##############################################
+-arachnophilia
+-architext
+-aspider
+-backrub
+-arachnophilia
+-architext
+-aspider
+-backrub
+-checkbot
+-Firefly
+-freecrawl
+-gazz/2.1 (gazz@nttrd.com)
+-geturl
+-googlebot
+-gulliver
+-infoseek
+-infoseeksidewinder
+-internetseer
+-lycos
+-scooter
+-searchhippo
+-slurp
+-fast-webcrawler
+-mercator
+-MSIECrawler
+-ia_archiver
+-ultraseek
+-Xenu Link Sleuth
+-Xenu's Link Sleuth
+-File Flash Spider
+-TrueRobot/1.4
+-SlySearch
+-Openfind
+-LWP::Simple
+-lwp-trivial
+-libwww-perl
+-libwww-perl/5.48
+-libwww-perl/5.52 FP
+-NPBot
+-Gigabot
+-Baiduspider
+-TurnitinBot
+-Overture-WebCrawler
+-Gaisbot
+-msnbot
+-psbot
+-ZyBorg
+-Jetbot/
+-wotbox.com
+-Mediapartners-Google
+-ShowLinks/1.0 libwww/5.4.0
+-Pompos/1.3
+-Java/
+-Ask Jeeves/Teoma
+-Z-Add Link Checker
+-MS Search 4.0 Robot
+-libwww-perl/5.65
+-libwww-perl/
+-dtSearchSpider
+-HLoader
+-IECheck
+-Java/1.4.2_04
+-Java1.3.1
+-LexiBot/1.00
+-libwww-perl/5.76
+-libwww-perl/5.63
+-Ocelli/1.1
+-NG/2.0
+-Faxobot/1.0
+-Java/1.4.2_06
+-almaden.ibm.com/cs/crawler
+-BecomeBot
+-PHPCrawl
+-Java/
+-findlinks/
+-appie 1.1
+-ColdFusion
+-ApacheBench/
+-LMQueueBot/
+-HTMLParser/
+-abot/0.1
+-aipbot/
+-OmniExplorer_Bot
+-BigCliqueBOT
+-Sensis.com.au Web Crawler
+-OmniExplorer_Bot/1.09
+-cfetch/1.0
+-CJNetworkQuality
+-GoodSeacher
+-Microsoft bCentral Submit-it Indexer
+-noxtrumbot/1.0 (crawler@noxtrum.com)
+-snap.com beta crawler
+-sna-0.0.1
+-http://robots.looksmart.com
+-Googlebot/
+-MJ12bot/
+-nicebot/
+-Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp
+-Snoopy v1.2
+-appie 1.1 (www.walhello.com)
+-AnswerBus (http://www.answerbus.com/)
+-Wget/1.8.2
+-findlinks/0.966 (+http://wortschatz.uni-leipzig.de/findlinks/)
+-NutchCVS/0.06-dev
+-POE-Component-Client-HTTP/
+-WinHttp.WinHttpRequest
+-grub-client
+-nicebot
+-livedoorCheckers/
+-Microsoft URL Control
+-Mister Pix
+-DoCoMo/2.0 P900i(c100;TB;W24H11)
+-indexer
+-internal dummy connection
+-Microsoft-WebDAV-MiniRedir
+-WatchMouse
+-Google-Sitemaps
+-sogou spider
+-SurveyBot
+-Mozilla/5.0 (compatible; iaskspider/1.0; MSIE 6.0)
+-AdsBot-Google
+-iaskspider
+-spider
+-robot
+-cralwer
+-Crawler
+-Feedfetcher
+-uTorrent/1750
+-Teemer
+-YahooFeedSeeker
+-miggibot
+-RPT-HTTPClient
+-bot
+-Sphere Scout
+-MSNPTC
+-Mail.Ru/
+-PHP/
+-WordPress/
+-Yandex/
+-Apple-PubSub/
+-AppleSyndication/
+-UniversalFeedParser/
+-SiteMonitor
+-Microsoft Data Access 
+-TwitterFeed
+-GeoHasher/
+
+~Mozilla/5.0 (Windows NT 6.0; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+~Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.2) Firefox/3.5.2
+~AppEngine-Google; (+http://code.google.com/appengine; appid: the-guiding-light)
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+~Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.91 Safari/534.30
+~Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+~checks.panopta.com
+~User-Agent==Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1
+~linkdex.com/v2.0
