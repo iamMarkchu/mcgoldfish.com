@@ -34,9 +34,6 @@ class Cache
 				$this->memcache->addServer($server, $server_port);
 			}
 		}
-	
-		if ($this->isKeywordCache($cachename))
-			$cachename = $this->getKeywordCacheName($cachename);
 		
 		$this->cachename = $cachename;
 		$this->cacheLogFile = $this->cacheDir . 'cachelog.txt';
@@ -67,7 +64,7 @@ class Cache
 			$content_time = time();
 			$need_compress = (strlen($content) > 256) ? MEMCACHE_COMPRESSED : false;
 			$this->memcache->set($this->cachename . ':' . SID_PREFIX . 'c', $content, $need_compress, $this->cacheExpSeconds) or $rtnRes = false;
-			//$this->memcache->set($this->cachename . ':' . SID_PREFIX . 't', $content_time, false, $this->cacheExpSeconds) or $rtnRes = false;
+			$this->memcache->set($this->cachename . ':' . SID_PREFIX . 't', $content_time, false, $this->cacheExpSeconds) or $rtnRes = false;
 			
 			if ($rtnRes)
 				$this->setLog('new_cache');
@@ -109,11 +106,7 @@ class Cache
    function getCache() {
 		if (!$this->memcache)
 			return '';
-		
 		$res = $this->memcache->get($this->cachename . ':' . SID_PREFIX . 'c');
-// 		if(D_A_B_TEST != 'get_code' && D_A_B_TEST != "" && D_A_B_TEST != null){
-// 			$res = str_replace('class="get_code"','class="'.D_A_B_TEST.'"',$res);
-// 		}
 		if ($res === false || empty($res)) {
 			$this->setLog('miss');
 			return '';

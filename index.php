@@ -2,7 +2,8 @@
 error_reporting(1);
 define('IN_DS', true);
 include_once dirname(__FILE__) . '/initiate.php';
-$script_uri = isset($_SERVER['REQUEST_URI'])?$_SERVER['REQUEST_URI']:'';
+test_for_nginx();
+$script_uri = isset($_SERVER['SCRIPT_URL'])?$_SERVER['SCRIPT_URL']:'';
 $_rewriteUrlInfo = dispatch_constant_url($script_uri);
 if($_rewriteUrlInfo){
 	$_model_type = $_rewriteUrlInfo['ModelType'];

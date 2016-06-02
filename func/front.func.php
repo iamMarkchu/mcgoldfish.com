@@ -1779,3 +1779,15 @@ function dump($array){
 	echo "<pre>";
 	print_r($array);
 }
+function test_for_nginx(){
+	if(isset($_SERVER['SERVER_SOFTWARE']) && strstr($_SERVER['SERVER_SOFTWARE'],'nginx')){
+		if(!empty($_SERVER['QUERY_STRING'])){
+			$replace = "?".$_SERVER['QUERY_STRING'];
+			$_SERVER['SCRIPT_URL'] = str_replace($replace,"",$_SERVER['REQUEST_URI']);
+		}else{
+			$_SERVER['SCRIPT_URL'] = $_SERVER['REQUEST_URI'];
+		}
+		return true;
+	}
+	return false;
+}
