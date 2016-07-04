@@ -19,8 +19,8 @@ elseif ($script_uri == '/privacy-policy/') {
 	include_once FRONT_DIR . 'privacy_policy.php';
 }else{
 	$_rewriteUrlInfo = dispatch_url($script_uri);
-	$_model_type = $_rewriteUrlInfo['ModelType'];
-	$_opt_data_id = isset($_rewriteUrlInfo['OptDataId']) ? $_rewriteUrlInfo['OptDataId'] : '';
+	$_model_type = $_rewriteUrlInfo['modeltype'];
+	$_opt_data_id = isset($_rewriteUrlInfo['optdataid']) ? $_rewriteUrlInfo['optdataid'] : '';
 	if (in_array($_model_type, array('homepage','article','category'))) {
 		include_once FRONT_DIR . $_model_type . '.php';
 		exit;
