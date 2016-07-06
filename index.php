@@ -1,4 +1,6 @@
 <?php
+$cmd = "rm -rf /app/site/mark-ubuntu/web/mcgoldfish.com/cache/smarty_c/*";
+system($cmd);
 error_reporting(1);
 define('IN_DS', true);
 include_once dirname(__FILE__) . '/initiate.php';

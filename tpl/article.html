@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>文章详情</title>
+    <!-- Bootstrap core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/public/css/offcanvas.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/public/third-party/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"> -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-green">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Mcgoldfish</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#about">我的类别</a></li>
+            <li><a href="#contact">我的标签</a></li>
+            <li><a href="#contact">我的说说</a></li>
+            <li><a href="#contact">我的相册</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <div class="row">
+            <div class="page-header">
+                <h1>Example page header <small>Subtext for header</small></h1>
+            </div>
+            <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li><a href="#">代码</a></li>
+              <li class="active">backend.mcgoldfish.com后台开发日志</li>
+            </ol>
+            <article class="col-xs-11 col-sm-12">
+              <{$articleInfo.content}>
+            </article>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="搜索文章" aria-describedby="sizing-addon1">
+            <span class="input-group-addon" id="sizing-addon1">Go</span>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">公告栏</div>
+            <div class="panel-body">
+              <p>1.<a href="#">代码已更新</a></p>
+              <p>2.<a href="#">代码已更新</a></p>
+              <p>3.<a href="#">代码已更新</a></p>
+              <p>4.<a href="#">代码已更新</a></p>
+              <p>4.<a href="#">代码已更新</a></p>
+              <p>4.<a href="#">代码已更新</a></p>
+              <p>4.<a href="#">代码已更新</a></p>
+              <p>4.<a href="#">代码已更新</a></p>
+            </div>
+          </div>
+          <div class="panel panel-success">
+            <div class="panel-heading">本周排行</div>
+            <div class="panel-body">
+              <p><a href="#">backend.mcgoldfish.com后台开发日志</a>(500人看过)</p>
+              <p><a href="#">在阿里云ubuntu14.04部署nginx+php+mysql开发环境</a>(500人看过)</p>
+              <p><a href="#">后台开发计划-6月</a>(500人看过)</p>
+              <p><a href="#">mcgoldfish.com网站开发计划</a>(500人看过)</p>
+              <p><a href="#">在ubuntu下部署rsync服务实现代码同步</a>(500人看过)</p>
+              <p><a href="#">[歌曲推荐]那些背后藏着故事的歌</a>(500人看过)</p>
+              <p><a href="#">姑娘，我用你的名字写了一首歌</a>(500人看过)</p>
+            </div>
+          </div>
+          <div class="panel panel-success">
+            <div class="panel-heading">最新文章</div>
+            <div class="panel-body">
+              <p><a href="#">backend.mcgoldfish.com后台开发日志</a>(1 min ago)</p>
+              <p><a href="#">在阿里云ubuntu14.04部署nginx+php+mysql开发环境</a>(2 hours ago)</p>
+              <p><a href="#">后台开发计划-6月</a>(3 days ago)</p>
+              <p><a href="#">mcgoldfish.com网站开发计划</a>(4 month ago)</p>
+              <p><a href="#">在ubuntu下部署rsync服务实现代码同步</a>(5 years ago)</p>
+              <p><a href="#">[歌曲推荐]那些背后藏着故事的歌</a>(5 years ago)</p>
+              <p><a href="#">姑娘，我用你的名字写了一首歌</a>(5 years ago)</p>
+            </div>
+          </div>
+          <div class="list-group">
+            <p>那些背后藏着故事的歌</p>
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 col-sm-12">
+              <h4>关于 McGoldFish</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta, quis? Maiores ullam dolorum dolor illum excepturi architecto itaque quos doloremque corrupti quas, voluptates ea harum quibusdam eum! Vel, qui!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod consectetur alias voluptatibus quisquam error placeat rerum dolor, suscipit ab modi!
+              </p>
+              <p>反馈或建议请发送邮件至：cdn@bootcss.com</p>
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <h4>友情链接</h4>
+              <ul class="list-unstyled">
+                <li><a href="baidu.com">百度搜索</a></li>
+                <li><a href="baidu.com">百度搜索</a></li>
+                <li><a href="baidu.com">百度搜索</a></li>
+                <li><a href="baidu.com">百度搜索</a></li>
+                <li><a href="baidu.com">百度搜索</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <h4>网站地图</h4>
+              <ul class="list-unstyled list-inline">
+                <li><a href="baidu.com">所有文章</a></li>
+                <li><a href="baidu.com">所有类别</a></li>
+                <li><a href="baidu.com">所有标签</a></li>
+              </ul>
+              <h4>网站统计</h4>
+              <p>mcgoldfish.com共有123篇文章,27个类别,29个标签,最后更新于2016-07-04 23:56:30</p>
+            </div>
+          </div>
+        <div class="copy-right"><span>© 2013-2016</span> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a> <span>京公网安备11010802014853</span></div>
+      </footer>
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script src="/public/third-party/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="/public/third-party/syntaxhighlighter_3.0.83/scripts/shAutoloader.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        SyntaxHighlighter.autoloader(
+                ['js','jscript','javascript','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js'],
+                ['bash','shell','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushBash.js'],
+                ['css','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushCss.js'],
+                ['xml','html','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushXml.js'],
+                ['sql','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushSql.js'],
+                ['php','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js']
+            ); 
+        SyntaxHighlighter.all(); 
+    })
+    </script> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script src="/public/js/offcanvas.js"></script>
+  </body>
+</html>

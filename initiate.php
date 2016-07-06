@@ -16,7 +16,7 @@ $default_js = array(
 );
 $default_css = array('style.css?' . VER);
 $default_lang = 'zh-CN';
-$new_site_url = 'http://chukui520.com';
+$new_site_url = 'http://mcgoldfish.com';
 $year = date('Y');
 $month = date('F');
 $next3days_timestamp = strtotime("+4 day");

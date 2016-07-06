@@ -48,7 +48,7 @@ function dispatch_url($url_path) {
 	$and_mark_pos = strpos($url_path, '&');
 
 	if ($url_path == '/' || empty($url_path)) {
-		$r['ModelType'] = 'homepage';
+		$r['modeltype'] = 'homepage';
 		return $r;
 	}
 	elseif ($qu_mark_pos !== false) {
