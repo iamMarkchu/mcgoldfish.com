@@ -40,10 +40,10 @@ class Mysql
 				return false;
 		}
 		
-		if (defined('TIME_ZONE')) {
-			$sql = "SET time_zone = '" . TIME_ZONE . "'";
-			$this->query($sql);
-		}
+		// if (defined('TIME_ZONE')) {
+		// 	$sql = "SET time_zone = '" . TIME_ZONE . "'";
+		// 	$this->query($sql);
+		// }
 		
 		if (defined('MYSQL_ENCODING')) {
 			$sql = "SET NAMES '" . MYSQL_ENCODING . "'";
