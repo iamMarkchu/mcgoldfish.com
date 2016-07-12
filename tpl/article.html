@@ -12,8 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/public/css/offcanvas.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/public/third-party/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"> -->
+    <link href="/public/origin/css/offcanvas.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="/assets/js/ie-emulation-modes-warning.js"></script>
@@ -51,16 +50,25 @@
         <div class="col-xs-12 col-sm-9">
           <div class="row">
             <div class="page-header">
-                <h1>Example page header <small>Subtext for header</small></h1>
+                <h1><{$articleInfo.title}></h1>
             </div>
             <ol class="breadcrumb">
               <li><a href="#">首页</a></li>
               <li><a href="#">代码</a></li>
               <li class="active">backend.mcgoldfish.com后台开发日志</li>
             </ol>
-            <article class="col-xs-11 col-sm-12">
+            <div class="well well-lg">
               <{$articleInfo.content}>
-            </article>
+            </div>
+            <div class="well">
+              <p><strong>非特殊说明，本文版权归原作者所有，转载请注明出处</strong></p>
+              <p>本文地址：<a href="#"><{$smarty.const.TOP_HTTP_LEVEL_DOMAIN_NAME}><{$articleInfo.requestpath}></a></p>
+              <p>本文标签:
+                <{foreach from=$articleInfo.tagInfo item=item1}>
+                      <a href="#"><{$item1.displayname}></a>
+                  <{/foreach}>
+              </p>
+            </div>
           </div>
         </div>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
@@ -159,23 +167,8 @@
       </footer>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- <script src="/public/third-party/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
-    <script src="/public/third-party/syntaxhighlighter_3.0.83/scripts/shAutoloader.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        SyntaxHighlighter.autoloader(
-                ['js','jscript','javascript','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js'],
-                ['bash','shell','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushBash.js'],
-                ['css','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushCss.js'],
-                ['xml','html','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushXml.js'],
-                ['sql','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushSql.js'],
-                ['php','/public/third-party/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js']
-            ); 
-        SyntaxHighlighter.all(); 
-    })
-    </script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-    <script src="/public/js/offcanvas.js"></script>
+    <script src="/public/origin/js/offcanvas.js"></script>
   </body>
 </html>

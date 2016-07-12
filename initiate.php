@@ -1,7 +1,5 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
+defined('IN_DS') or die('Hacking attempt');
 
 include_once(dirname(__FILE__) . '/etc/const.php');
 include_once(INCLUDE_ROOT . 'func/front.func.php');
@@ -12,7 +10,9 @@ $tpl = new TemplateSmarty();
 
 $default_js = array(
 	'header' => array(),
-	'footer' => array('jquery.js', 'common.js?' . VER,'jquery.plus.js', 'click_collect.js?' . VER, 'coupon.js?' . VER)
+	'footer' => array('/public/origin/js/jquery.js',
+					  '/public/origin/js/common.js?' . VER
+					 )
 );
 $default_css = array('style.css?' . VER);
 $default_lang = 'zh-CN';
@@ -42,4 +42,3 @@ if ($next3days_month == 'January' && $next3days_month != date('F')) {
 	$next3days_year += 1;
 }
 $global_word_tab['month'] = $next3days_month;
-?>

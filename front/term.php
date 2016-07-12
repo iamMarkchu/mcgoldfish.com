@@ -1,7 +1,6 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
+defined('IN_DS')    die('Hacking attempt');
+
 define('D_PAGE_NAME', 'MERCHANT');
 if (!(int)$_opt_data_id)
 	goto_404();

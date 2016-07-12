@@ -3,27 +3,24 @@ if (!defined('IN_DS')) {
 	die('Hacking attempt');
 }
 //config
-define('VER', '2016041501');
+define('VER', '2016071001');
 define('MEM_LIFT_TIME', 3600 * 24 * 30);
-define('MEM_PREX', 'chukui520_');
+define('MEM_PREX', 'mcgoldfish_');
 
-define('DEBUG_MODE', false);
+define('DEBUG_MODE', true);
 
-define('SITE_DOMAIN', '.chukui520.com');
+define('SITE_DOMAIN', '.mcgoldfish.com');
 include_once dirname(__FILE__) . '/db_www.php';
 define('INCLUDE_ROOT', dirname(dirname(__FILE__)).'/');
 
 define('HTTP_HOST', $_SERVER['HTTP_HOST']);
 define('SITE_URL', 'http://' . HTTP_HOST);
 define('FRONT_DIR', INCLUDE_ROOT . 'front/');
-define('TOP_LEVEL_DOMAIN_NAME', 'Chukui520.com');
-define('TOP_HTTP_LEVEL_DOMAIN_NAME', 'http://www.chukui520.com');
+define('TOP_LEVEL_DOMAIN_NAME', 'mcgoldfish.com');
+define('TOP_HTTP_LEVEL_DOMAIN_NAME', 'http://www.mcgoldfish.com');
 
-define('CSS_SUB_PATH', '/css/mini/');
-define('JS_SUB_PATH', '/js/mini/');
-define('IMG_ROOT_PATH', 'http://ss.mgcdn.com/image');
-define('DECDN_ROOT_PATH', '/public');
-
+define('STATIC_RESOURCE_ORIGIN_PATH','/public/origin');
+define('STATIC_RESOURCE_OUTTER_PATH','/public/third-party');
 define('ERROR_LOG_FILE', 'userError.log');
 define('MAIL_SEND_ERROR_LOG_FILE', 'userMailError.log');
 
@@ -31,8 +28,8 @@ define('TRACKING_ROBOTS_FILE_PATH', INCLUDE_ROOT . 'etc/t_robots.txt');
 define('TRACKING_IGNOREDIP_FILE_PATH', INCLUDE_ROOT . 'etc/t_ip.txt');
 
 define("SITE_NAME", 'chukui');
-define('SITE_FULL_NAME', 'ChuKui520.com');
-define('SITE_CONTACT_EMAIL', 'support@chukui520.com');
+define('SITE_FULL_NAME', 'mcgoldfish.com');
+define('SITE_CONTACT_EMAIL', 'support@mcgoldfish.com');
 define("SID_PREFIX", 's01');
 define('DATA_ROOT', INCLUDE_ROOT . 'data/log/');
 define('LOG_LOCATION', INCLUDE_ROOT . 'data/log/');

@@ -1,10 +1,7 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
+defined('IN_DS')    or die('Hacking attempt');
 define('D_PAGE_NAME', 'ARTICLE');
-if (!(int)$_opt_data_id)
-	goto_404();
+if (!(int)$_opt_data_id)    goto_404();
 $canonical_uri = $_rewriteUrlInfo['RequestPath'];
 define("D_PAGE_VALUE",	$canonical_uri);
 //include_once 'verify.php';
@@ -20,12 +17,12 @@ if (DEBUG_MODE || isset($_GET['forcerefresh'])){
 }
 if (!$mainContent) {
 	$objCache->initialCache();
-	$sql = "select * from article where id = {$_opt_data_id}";
-	$f = $GLOBALS['db']->query($sql); 
-	$articleInfo = $GLOBALS['db']->getRow($f);
+	$article = new Article();
+	$articleInfo = $article->getArticleInfoById($_opt_data_id);
 	$articleInfo['content'] = nl2br($articleInfo['content']);
 	$tpl->assign('articleInfo',$articleInfo);
-	$tpl->display('article.html');
+	if(isset($_GET['v2'])) $tpl->display('article.bak.html');
+	else $tpl->display('article.html');
 	$mainContent = $objCache->endCache();
 }
 echo $mainContent;

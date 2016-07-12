@@ -34,7 +34,6 @@ class Cache
 				$this->memcache->addServer($server, $server_port);
 			}
 		}
-		
 		$this->cachename = $cachename;
 		$this->cacheLogFile = $this->cacheDir . 'cachelog.txt';
 	}

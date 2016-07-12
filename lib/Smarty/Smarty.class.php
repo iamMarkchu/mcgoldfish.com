@@ -1103,7 +1103,10 @@ class Smarty
      */
     function display($resource_name, $cache_id = null, $compile_id = null)
     {
-        get_page_static_nav_data();
+        //获取一级分类作为导航
+        $category = new Category();
+        $primaryCategory = $category->getPrimaryCategory();
+        $this->assign('primaryCategory',$primaryCategory);
         $this->fetch($resource_name, $cache_id, $compile_id, true);
     }
 
