@@ -9,11 +9,41 @@ body {
 /*body {
   padding-top: 70px;
 }*/
+
 footer{padding: 30px 0;}
 footer.footer{background-color: #22b38a;border-top:#22b234;color:#fff;padding-top: 40px;margin-top: 80px;}
 img{width: 100%;}
-.navbar-green{background-color: #22b38a;}
+.my-carousel{margin-bottom: 20px;}
+.navbar-green{background-color: #22b38a;border-radius:0;}
 .navbar-green a{color:#fff;}
+.my-nav{ padding-left: 180px; width: 100%; box-sizing: border-box; }
+.my-nav>ul>li{ width: 20%; text-align: center; position: relative; border-bottom: 1px solid #22b38a;}
+.my-nav>ul>li:hover a{ color: #22b38a; background: #fff; }
+/*.my-nav ul li:hover{border-bottom: 1px solid #22b38a;border-top: 1px solid #22b38a;}*/
+.my-nav>ul>li:after{content: "";
+    position: absolute;
+    background-color: #b0f6e2;
+    width: 1px;
+    height: 16px;
+    top: 17px;
+    right: 0;}
+.my-nav>ul>li:nth-child(5n):after{ display: none; }
+.my-nav   ul{ width: 100%; }
+/*.my-logo{ width: 180px; }*/
+.my-nav>ul li.nav-cate:hover i{ transform: rotate(180deg);
+-o-transform: rotate(180deg);
+-webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2); }
+.my-recommand-block{border: 1px solid #e0e0e0;border-radius: 4px;margin-bottom: 20px;}
+div.my-color>.panel-heading{background-color: #22b38a;color: #fff;border: 1px solid #22b38a;}
+/*div.my-notice>.panel-heading{background-color: #22b38a;color: #fff;border: 1px solid #22b38a;}*/
+.my-tag>a.btn{padding:1px 0px;margin-bottom: 5px;}
+/*.my-left{margin-right: 5%;}*/
+.input-group-lg{margin-bottom: 20px;}
+.input-group-lg .my-search{ height: 34px; }
+.input-group-lg .my-search-button{  background-color: #22b38a; height: 34px; padding: 0 10px;}
+.my-search-button i{ color: #fff; }
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
