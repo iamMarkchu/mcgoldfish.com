@@ -26,6 +26,7 @@ define('MAIL_SEND_ERROR_LOG_FILE', 'userMailError.log');
 
 define('TRACKING_ROBOTS_FILE_PATH', INCLUDE_ROOT . 'etc/t_robots.txt');
 define('TRACKING_IGNOREDIP_FILE_PATH', INCLUDE_ROOT . 'etc/t_ip.txt');
+define('IMG_URL', 'http://192.168.56.103:7999/');
 
 define("SITE_NAME", 'chukui');
 define('SITE_FULL_NAME', 'mcgoldfish.com');

@@ -108,7 +108,7 @@
               <{foreach from=$recommandArticleList item=item}>
                 <div class="col-xs-12 col-lg-12 my-recommand-block">
                   <h3><span class="label label-success"><{$item.articlesource}></span> <a href="<{$item.requestpath}>"><{$item.title}></a></h3>
-                  <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
+                  <img src="<{$smarty.const.IMG_URL}><{$item.image}>" class="thumbnail" alt="">
                   <p class="my-article-desc less">
                     <{$item.shortDesc}>
                   </p>
