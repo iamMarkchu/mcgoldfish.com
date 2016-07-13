@@ -19,6 +19,9 @@ if (!$mainContent) {
 	$tpl->assign('recommandArticleList',$recommandArticleList);
 	$newestArticleList = $article->getNewArticeList();
 	$tpl->assign('newestArticleList',$newestArticleList);
+	$tag = new Tag();
+	$hotTagList = $tag->getHotTag();
+	$tpl->assign('hotTagList',$hotTagList);
 	//加载页面特殊js,css文件以及meta信息
 	$meta = '';
 	$page_header = array(
@@ -27,9 +30,7 @@ if (!$mainContent) {
 		'js' => $default_js,
 	);
 	$tpl->assign('page_header'.$page_header);
-	//$tpl->display("index.html");
-	if(isset($_GET['v2'])) $tpl->display('index.bak.html');
-	else $tpl->display('index.html');
+	$tpl->display("index.html");
 	$mainContent = $objCache->endCache();
 }
 echo $mainContent;

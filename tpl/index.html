@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
-    <title>Off Canvas Template for Bootstrap</title>
+    <title>首页</title>
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -42,10 +42,9 @@
                  我的类别&nbsp<i class="glyphicon glyphicon-chevron-down"></i><!-- <span class="caret"></span> -->
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
+                <{foreach from=$primaryCategory item=item}>
+                  <li><a href="<{$item.requestpath}>"><{$item.displayname}></a></li>
+                <{/foreach}>
               </ul>
             </li>
             <li><a href="#contact">我的标签</a></li>
@@ -87,6 +86,13 @@
                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, tenetur.</p>
                         </div>
                     </div>
+                    <div class="item">
+                       <img src="/public/origin/images/banner04.jpeg" alt="Third slide" height="350">
+                       <div class="carousel-caption">
+                         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, tenetur.</p>
+                        </div>
+                    </div>
                  </div>
                 <!-- Controls -->
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -99,87 +105,27 @@
                 </a>
               </div>
               <h2>推荐文章 &nbsp<small>Recommand Blog</small></h2>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div>
-              <div class="col-xs-12 col-lg-12 my-recommand-block">
-                <h3><span class="label label-success">原创</span> <a href="#">程序员的自我修养</a></h3>
-                <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam commodi nihil temporibus eveniet reprehenderit odit, numquam iure earum pariatur eum necessitatibus veritatis atque modi quis a repellendus, inventore officia corporis! Atque, est officia quod quae possimus, vero deleniti impedit id amet doloremque reiciendis officiis ex sequi dolore molestias saepe? Sunt!...</p>
-                <p>
-                  <i class="glyphicon glyphicon-user"></i>Mark&nbsp&nbsp
-                  <i class="glyphicon glyphicon-eye-open"></i>&nbsp123&nbsp
-                  <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-                  <i class="glyphicon glyphicon-tag"></i>&nbsp
-                    <a href="#">代码</a>
-                    <a href="#">生活</a>
-                </p>
-              </div> 
+              <{foreach from=$recommandArticleList item=item}>
+                <div class="col-xs-12 col-lg-12 my-recommand-block">
+                  <h3><span class="label label-success"><{$item.articlesource}></span> <a href="<{$item.requestpath}>"><{$item.title}></a></h3>
+                  <img src="/public/origin/images/1.jpg" class="thumbnail" alt="">
+                  <p class="my-article-desc less">
+                    <{$item.shortDesc}>
+                  </p>
+                  <p>
+                    <i class="glyphicon glyphicon-user"></i><{$item.addeditor}>&nbsp&nbsp
+                    <i class="glyphicon glyphicon-eye-open"></i>&nbsp<{$item.clickcount}>&nbsp
+                    <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime}>&nbsp
+                    <i class="glyphicon glyphicon-tag"></i>&nbsp
+                      <{foreach from=$item.tagInfo item=item1}>
+                        <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
+                      <{/foreach}>
+                  </p>
+                </div>
+              <{/foreach}>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+        <div class="col-xs-6 col-sm-4 sidebar-offcanvas my_right" id="sidebar">
           <div class="input-group input-group-lg">
             <input type="text" class="form-control my-search" placeholder="搜索文章" aria-describedby="sizing-addon1">
             <span class="input-group-addon my-search-button" id="sizing-addon1"><i class="glyphicon glyphicon-search"></i> 
@@ -188,11 +134,11 @@
           <div class="panel panel-default my-color my-notice">
             <div class="panel-heading">公告</div>
             <div class="panel-body">
-              <p><a href="#">1. Lorem ipsum dolor.</a></p>
-              <p><a href="#">2. Lorem ipsum dolor sit.</a></p>
-              <p><a href="#">3. Lorem ipsum dolor sit.</a></p>
-              <p><a href="#">4. Lorem ipsum dolor sit amet.</a></p>
-              <p><a href="#">5. Lorem ipsum dolor sit amet, consectetur.</a></p>
+              <p><a href="#">1. 代码即将上线.</a></p>
+              <p><a href="#">2. 周老师更新了一篇博客.</a></p>
+              <p><a href="#">3. 张三发表了一个评论.</a></p>
+              <p><a href="#">4. 李四觉得这张图片很赞</a></p>
+              <p><a href="#">5. 王麻子刚刚留下他的足迹</a></p>
             </div>
           </div>
           <div class="panel panel-default my-color">
@@ -210,46 +156,16 @@
           <div class="panel panel-default my-color">
             <div class="panel-heading">热门标签</div>
             <div class="panel-body my-tag">
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
-              <a href="#" class="btn btn-success">日志</a>
-              <a href="#" class="btn btn-info">环境部署</a>
-              <a href="#" class="btn btn-warning">nginx配置</a>
-              <a href="#" class="btn btn-primary">apt-get</a>
-              <a href="#" class="btn btn-default">nginx配置</a>
+              <{foreach from=$hotTagList key=k item=item}>
+                  <a href="#" class="btn btn-<{if $k%4 == 0}>info
+                  <{elseif $k%4 == 1}>success
+                  <{elseif $k%4 == 2}>primary
+                  <{elseif $k%4 == 3}>warning
+                  <{/if}>
+                  ">
+                    <{$item.displayname}>
+                  </a>
+              <{/foreach}>
             </div>
           </div>
           <div class="tabbable tabbable-custom">
@@ -272,13 +188,9 @@
           <div class="panel panel-default my-color">
             <div class="panel-heading">最新文章</div>
             <div class="panel-body">
-              <p><a href="#">backend.mcgoldfish.com后台开发日志</a>(1 min ago)</p>
-              <p><a href="#">在阿里云ubuntu14.04部署nginx+php+mysql开发环境</a>(2 hours ago)</p>
-              <p><a href="#">后台开发计划-6月</a>(3 days ago)</p>
-              <p><a href="#">mcgoldfish.com网站开发计划</a>(4 month ago)</p>
-              <p><a href="#">在ubuntu下部署rsync服务实现代码同步</a>(5 years ago)</p>
-              <p><a href="#">[歌曲推荐]那些背后藏着故事的歌</a>(5 years ago)</p>
-              <p><a href="#">姑娘，我用你的名字写了一首歌</a>(5 years ago)</p>
+              <{foreach from=$newestArticleList item=item}>
+                <p><a href="<{$item.requestpath}>"><{$item.title}></a>(<{$item.addtime}>)</p>
+              <{/foreach}>
             </div>
           </div>
         </div>
@@ -287,7 +199,7 @@
     <footer class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-md-5 col-sm-12">
+            <div class="col-md-4 col-sm-12">
               <h4>关于 McGoldFish</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta, quis? Maiores ullam dolorum dolor illum excepturi architecto itaque quos doloremque corrupti quas, voluptates ea harum quibusdam eum! Vel, qui!
@@ -297,7 +209,7 @@
               </p>
               <p>反馈或建议请发送邮件至：cdn@bootcss.com</p>
             </div>
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-4 col-sm-12 footer-link  ">
               <h4>友情链接</h4>
               <ul class="list-unstyled">
                 <li><a href="baidu.com">百度搜索</a></li>
@@ -307,18 +219,21 @@
                 <li><a href="baidu.com">百度搜索</a></li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-4  col-sm-12 footer-link">
               <h4>网站地图</h4>
               <ul class="list-unstyled list-inline">
                 <li><a href="baidu.com">所有文章</a></li>
                 <li><a href="baidu.com">所有类别</a></li>
                 <li><a href="baidu.com">所有标签</a></li>
+                <li><a href="baidu.com">所有相册</a></li>
+                <li><a href="baidu.com">所有图片</a></li>
+
               </ul>
               <h4>网站统计</h4>
               <p>mcgoldfish.com共有123篇文章,27个类别,29个标签,最后更新于2016-07-04 23:56:30</p>
             </div>
           </div>
-        <div class="copy-right"><span>© 2013-2016</span> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a> <span>京公网安备11010802014853</span></div>
+        <div class="copy-right footer-copy"><span>©<{$smarty.const._YEAR_}></span> <a href="http://www.miibeian.gov.cn/" target="_blank">鄂ICP备16011870号</a></div>
       </footer>
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

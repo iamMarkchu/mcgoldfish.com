@@ -21,8 +21,7 @@ if (!$mainContent) {
 	$articleInfo = $article->getArticleInfoById($_opt_data_id);
 	$articleInfo['content'] = nl2br($articleInfo['content']);
 	$tpl->assign('articleInfo',$articleInfo);
-	if(isset($_GET['v2'])) $tpl->display('article.bak.html');
-	else $tpl->display('article.html');
+	$tpl->display('article.html');
 	$mainContent = $objCache->endCache();
 }
 echo $mainContent;

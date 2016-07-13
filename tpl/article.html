@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/public/orgin/css/offcanvas.css" rel="stylesheet">
+    <link href="/public/origin/css/offcanvas.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- <script src="/assets/js/ie-emulation-modes-warning.js"></script> -->
@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Mcgoldfish</a>
+          <a class="navbar-brand" href="/">Mcgoldfish</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse my-nav">
           <ul class="nav navbar-nav">
@@ -42,10 +42,9 @@
                  我的类别&nbsp<i class="glyphicon glyphicon-chevron-down"></i><!-- <span class="caret"></span> -->
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
+                <{foreach from=$primaryCategory item=item}>
+                  <li><a href="<{$item.requestpath}>"><{$item.displayname}></a></li>
+                <{/foreach}>
               </ul>
             </li>
             <li><a href="#contact">我的标签</a></li>
@@ -60,7 +59,7 @@
         <div class="col-xs-12 col-sm-9">
           <div class="row">
             <div class="page-header">
-                <h1>论程序员的自我修养</h1>
+                <h1><{$articleInfo.title}></h1>
             </div>
             <ol class="breadcrumb">
               <li><a href="#">首页</a></li>
@@ -68,16 +67,18 @@
               <li class="active">论程序员的自我修养</li>
             </ol>
             <div class="well well-lg">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, adipisci esse, odio eaque recusandae magni quisquam itaque totam sapiente aut explicabo nihil dignissimos. Asperiores fuga odio suscipit excepturi sequi, ratione minima provident nostrum perspiciatis commodi iusto vero perferendis mollitia? Accusantium quisquam repudiandae iusto architecto mollitia eaque, consectetur, dolores ullam cumque facilis. Nemo temporibus amet, ipsam animi possimus omnis, neque doloremque iusto, quasi, atque recusandae repellendus. Rerum quaerat amet architecto, odio cumque hic dolore facere totam illo suscipit, beatae impedit autem provident qui. Temporibus aliquam quis quae reprehenderit vel ipsam, non excepturi ea maiores eaque, incidunt fugit, labore harum! Optio veritatis magni ipsa, a tempora? Deserunt quisquam dolorum voluptatibus, ullam, non quae quaerat harum nemo, vero pariatur dignissimos ratione, error soluta! Mollitia ut ullam, blanditiis, qui corrupti perferendis, ad commodi sit cumque error assumenda aut dignissimos quo animi ipsam dolor. Placeat ipsum illo ut nostrum, natus unde, minima sed delectus quam, odio fugit pariatur alias eligendi fuga dicta ipsam officiis eum. Eius corporis assumenda, libero numquam, eos tempora odit beatae harum ad minima cupiditate provident facere reiciendis sapiente impedit laudantium accusantium magnam iste, ea quaerat dolorum! Soluta voluptates rem hic consequatur cum eum accusantium quisquam tenetur pariatur, nemo ex impedit praesentium, excepturi cumque, inventore. Qui non soluta vitae nemo doloribus accusantium nobis, numquam mollitia iure quas magnam nostrum dolorum aspernatur, hic ab maiores dolores velit consequatur eius itaque maxime debitis distinctio reiciendis. Sed, aspernatur. Excepturi voluptatibus, incidunt cupiditate iusto, eligendi ipsam consequatur autem adipisci fuga nobis illum iure? Nemo unde error, sint voluptate libero delectus natus laudantium dicta accusantium aspernatur magnam commodi eum minus quis, a reprehenderit iure. Asperiores quo aspernatur distinctio fuga. Adipisci cumque inventore ut, tempore minima assumenda? Libero maiores repellendus ipsa sed, odio quos non voluptate, explicabo a ex excepturi commodi harum delectus beatae possimus, veniam esse optio fuga dignissimos! Ipsam magni est explicabo enim eaque nihil, asperiores consequuntur, unde nesciunt maiores quibusdam sequi ipsum debitis repellendus? Voluptatibus quibusdam ullam, ratione odio velit voluptas reiciendis soluta reprehenderit veritatis, placeat corporis rerum sequi fuga temporibus quo dolores ea praesentium eveniet cumque adipisci enim possimus tenetur incidunt. Ut blanditiis aspernatur vel harum, accusantium necessitatibus illum sit numquam iusto maxime veritatis sunt itaque exercitationem dolorum doloremque minus dolore nobis, tempore illo id fugit fugiat natus magni reprehenderit! Possimus vitae, numquam, eum assumenda quasi molestiae eos vero, nesciunt eligendi magnam qui commodi, repudiandae eaque veniam dignissimos unde amet voluptatibus ducimus. Provident a suscipit adipisci doloremque voluptatum cum ipsum natus illum perspiciatis dicta excepturi eos quia nulla eum quisquam, voluptate aspernatur sint! Aspernatur nisi, laboriosam ut, vitae praesentium corporis et qui omnis cumque voluptate maxime eaque! Voluptatum tempore quos, nam optio, aut, possimus ipsa placeat dicta odio quod in esse laborum ut beatae voluptates incidunt vero iste quae dolores id. Laudantium ab repellat, sequi et similique, velit nesciunt omnis, sed maxime quo dolores reiciendis ea non soluta! Facere pariatur reprehenderit temporibus repudiandae neque nisi, rerum nam porro libero ex nulla nostrum non, voluptatum sit vero aliquam, dolor explicabo autem expedita harum. Aliquid, dolorum.
+                <{$articleInfo.content}>
             </div>
             <div class="well">
               <p><strong>非特殊说明，本文版权归原作者所有，转载请注明出处</strong></p>
-              <p>本文地址：<a href="#">http://mcgoldfish.com/article/asdasd.html</a></p>
-              <p>本文标签：
-                 <a href="#">代码</a>
-                 <a href="#">感动</a>
-                 <a href="#">分享</a>
-              </p>
+              <p>本文地址：<a href="#"><{$smarty.const.TOP_HTTP_LEVEL_DOMAIN_NAME}><{$articleInfo.requestpath}></a></p>
+              <{if $articleInfo.tagInfo neq ''}>
+                <p>本文标签：
+                  <{foreach from=$articleInfo.tagInfo item=item1}>
+                    <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
+                  <{/foreach}>
+                </p>
+              <{/if}>
             </div>
           </div>
         </div>
@@ -189,7 +190,7 @@
     <footer class="footer">
         <div class="container">
           <div class="row">
-            <div class="col-md-5 col-sm-12">
+            <div class="col-md-4 col-sm-12">
               <h4>关于 McGoldFish</h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta, quis? Maiores ullam dolorum dolor illum excepturi architecto itaque quos doloremque corrupti quas, voluptates ea harum quibusdam eum! Vel, qui!
@@ -199,7 +200,7 @@
               </p>
               <p>反馈或建议请发送邮件至：cdn@bootcss.com</p>
             </div>
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-4 col-sm-12 footer-link  ">
               <h4>友情链接</h4>
               <ul class="list-unstyled">
                 <li><a href="baidu.com">百度搜索</a></li>
@@ -209,18 +210,21 @@
                 <li><a href="baidu.com">百度搜索</a></li>
               </ul>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-4  col-sm-12 footer-link">
               <h4>网站地图</h4>
               <ul class="list-unstyled list-inline">
                 <li><a href="baidu.com">所有文章</a></li>
                 <li><a href="baidu.com">所有类别</a></li>
                 <li><a href="baidu.com">所有标签</a></li>
+                <li><a href="baidu.com">所有相册</a></li>
+                <li><a href="baidu.com">所有图片</a></li>
+
               </ul>
               <h4>网站统计</h4>
               <p>mcgoldfish.com共有123篇文章,27个类别,29个标签,最后更新于2016-07-04 23:56:30</p>
             </div>
           </div>
-        <div class="copy-right"><span>© 2013-2016</span> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a> <span>京公网安备11010802014853</span></div>
+        <div class="copy-right footer-copy"><span>©<{$smarty.const._YEAR_}></span> <a href="http://www.miibeian.gov.cn/" target="_blank">鄂ICP备16011870号</a></div>
       </footer>
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

@@ -11,8 +11,9 @@ body {
 }*/
 
 footer{padding: 30px 0;}
-footer.footer{background-color: #22b38a;border-top:#22b234;color:#fff;padding-top: 40px;margin-top: 80px;}
+footer.footer{background-color: #000;border-top:#22b234;color:#fff;padding-top: 40px;margin-top: 80px;}
 img{width: 100%;}
+.my-carousel img{max-height: 273px;}
 .my-carousel{margin-bottom: 20px;}
 .navbar-green{background-color: #22b38a;border-radius:0;}
 .navbar-green a{color:#fff;}
@@ -44,6 +45,21 @@ div.my-color>.panel-heading{background-color: #22b38a;color: #fff;border: 1px so
 .input-group-lg .my-search{ height: 34px; }
 .input-group-lg .my-search-button{  background-color: #22b38a; height: 34px; padding: 0 10px;}
 .my-search-button i{ color: #fff; }
+.my-article-desc.less {
+    max-height: 104px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.my_right{ float: right; padding-left: 40px; }
+.footer-link ul{ width: 100%; overflow: hidden; }
+.footer-link ul li{ width: 50%; float: left; }
+.footer-link ul li a{ color: #fff; line-height: 26px;}
+.footer-copy{   border-top: 1px solid #f2f5f7;
+    padding-top: 10px;
+    margin-top: 10px;}
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;

@@ -21,7 +21,7 @@ class Article
 		foreach ($result as $k => $v) {
 			$articleid = $v['id'];
 			$result[$k] = $this->checkArticleImage($result[$k]);
-			$result[$k]['shortDesc'] = makeShortDesc($v['content']);
+			$result[$k]['shortDesc'] = strip_tags($v['content']);
 			$result[$k]['tagInfo'] = $this->getArticleTagList($articleid);
 			$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
 		}
