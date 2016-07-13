@@ -6,7 +6,7 @@ define('IN_DS', true);
 include_once dirname(__FILE__) . '/initiate.php';
 $ip = get_client_ip();
 $allowIp = array('101.81.225.187');
-if(!in_array($ip, )) die('no');
+if(!in_array($ip, $allowIp)) die('no');
 test_for_nginx();
 $script_uri = isset($_SERVER['SCRIPT_URL'])?$_SERVER['SCRIPT_URL']:'';
 $_rewriteUrlInfo = dispatch_constant_url($script_uri);
