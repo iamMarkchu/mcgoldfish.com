@@ -1,103 +1,26 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/favicon.ico">
-    <title>文章详情</title>
-    <!-- Bootstrap core CSS -->
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="/public/origin/css/offcanvas.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!-- <script src="/assets/js/ie-emulation-modes-warning.js"></script> -->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<{include file="block_head.html"}>
   <body>
-    <nav class="navbar navbar-green">
-      <div class="container ">
-        <div class="navbar-header my-logo">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Mcgoldfish</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse my-nav">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">首页</a></li>
-            <li role="presentation" class="nav-cate dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                 我的类别&nbsp<i class="glyphicon glyphicon-chevron-down"></i><!-- <span class="caret"></span> -->
-              </a>
-              <ul class="dropdown-menu">
-                <{foreach from=$primaryCategory item=item}>
-                  <li><a href="<{$item.requestpath}>"><{$item.displayname}></a></li>
-                <{/foreach}>
-              </ul>
-            </li>
-            <li><a href="#contact">我的标签</a></li>
-            <li><a href="#contact">我的说说</a></li>
-            <li><a href="#contact">我的相册</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <{include file="block_nav.html"}>
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-8">
           <div class="row">
             <div class="page-header">
                 <h1><{$articleInfo.title}></h1>
+                <input type="hidden" id="articleid" value="<{$articleInfo.id}>">
             </div>
-            <ol class="breadcrumb">
-              <li><a href="#">首页</a></li>
-              <li><a href="#">代码</a></li>
-              <li class="active">论程序员的自我修养</li>
-            </ol>
-            <div class="well well-lg">
+            <{include file="block_breadcrumb.html"}>
+            <article class="well well-lg">
                 <{$articleInfo.content|stripcslashes}>
-            </div>
-            <div class="well">
-              <p><strong>非特殊说明，本文版权归原作者所有，转载请注明出处</strong></p>
-              <p>本文地址：<a href="#"><{$smarty.const.TOP_HTTP_LEVEL_DOMAIN_NAME}><{$articleInfo.requestpath}></a></p>
-              <{if $articleInfo.tagInfo neq ''}>
-                <p>本文标签：
-                  <{foreach from=$articleInfo.tagInfo item=item1}>
-                    <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
-                  <{/foreach}>
-                </p>
-              <{/if}>
-              <{include file="block_share.html"}>
-            </div>
-            <div class="well">
-              <!-- UY BEGIN -->
-              <div id="uyan_frame"></div>
-              <!-- UY END -->
-            </div>
+            </article>
+            <{include file="block_article_info.html"}>
+            <{include file="block_comment.html"}>
           </div>
         </div>
         <{include file="block_right_area.html"}>
       </div>
     </div>
     <{include file="block_footer.html"}>
-    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-    <script src="/public/origin/js/offcanvas.js"></script>
-    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2106820"></script>
+    <{include file="block_footer_js.html"}>
   </body>
 </html>

@@ -27,11 +27,9 @@ define('GA_COOKIE', '_gasrc');
 //log
 define('TRACKING_LOG_TYPE', 3);
 
-
 //black list
 define('TRACKING_FORBIT_IPS', TRACKING_PATH.'/forbit/t_ip.txt');
 define('TRACKING_FORBIT_UAS', TRACKING_PATH.'/forbit/t_robots.txt');
-
 require_once 'define_chukui520.com.php';
 
 

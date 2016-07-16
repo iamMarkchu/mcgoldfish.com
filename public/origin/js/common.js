@@ -7,4 +7,7 @@ $(document).ready(function(){
 			$('.nav_2').fadeOut(100);
 		}
 	);
+	$('.my-comment-data').focus(function(){
+		alert('123');
+	});
 });

@@ -4,7 +4,7 @@ define('D_PAGE_NAME', 'HOMEPAGE');
 define("D_PAGE_VALUE",	'/');
 
 include_once 'manager.php';
-//include_once 'tracking_block.php';
+include_once 'tracking_block.php';
 
 $cacheFileName = MEM_PREX . 'index';
 $objCache = new Cache($cacheFileName);

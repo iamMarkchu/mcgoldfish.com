@@ -1,0 +1,31 @@
+<nav class="navbar navbar-green">
+      <div class="container ">
+        <div class="navbar-header my-logo">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Mcgoldfish</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse my-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li role="presentation" class="nav-cate dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                 我的类别&nbsp<i class="glyphicon glyphicon-chevron-down"></i><!-- <span class="caret"></span> -->
+              </a>
+              <ul class="dropdown-menu">
+                <{foreach from=$primaryCategory item=item}>
+                  <li><a href="<{$item.requestpath}>"><{$item.displayname}></a></li>
+                <{/foreach}>
+              </ul>
+            </li>
+            <li><a href="#contact">我的标签</a></li>
+            <li><a href="#contact">我的说说</a></li>
+            <li><a href="#contact">我的相册</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>

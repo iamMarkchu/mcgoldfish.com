@@ -1,0 +1,12 @@
+<div class="well">
+  <p><strong>非特殊说明，本文版权归原作者所有，转载请注明出处</strong></p>
+  <p>本文地址：<a href="#"><{$smarty.const.TOP_HTTP_LEVEL_DOMAIN_NAME}><{$articleInfo.requestpath}></a></p>
+  <{if $articleInfo.tagInfo neq ''}>
+    <p>本文标签：
+      <{foreach from=$articleInfo.tagInfo item=item1}>
+        <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
+      <{/foreach}>
+    </p>
+  <{/if}>
+  <{include file="block_share.html"}>
+</div>
