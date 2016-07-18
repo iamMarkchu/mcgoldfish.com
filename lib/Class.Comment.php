@@ -16,4 +16,10 @@ class Comment{
 		$flag = $GLOBALS['db']->query($sql);
 		return $flag;
 	}
+	public function getCommentList($dataid,$datatype="article"){
+		if(empty($dataid)) return array();
+		$sql = "select * from `comment` where optdataid = {$dataid} and datatype = 'article' and `status` = 'republish'";
+		$result = $GLOBALS['db']->getRows($sql);
+		return $result;
+	}
 }
