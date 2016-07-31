@@ -1,7 +1,6 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
+defined('IN_DS') or die('Hacking attempt');
+
 //get static page block
 function get_page_static_data(){
 	

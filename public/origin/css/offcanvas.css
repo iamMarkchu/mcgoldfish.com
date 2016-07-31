@@ -75,11 +75,15 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2); }
     border-radius: 6px;
 }
 .box img{border-radius: 6px;}
-.my-notice{background-color: #f6f6f6;padding: 12px 0;}
+.my-notice{background-color: #f6f6f6;padding: 12px 0;font-size: 12px;}
+.my-notice ul{margin:0;padding: 0;}
 .my-notice ul li {margin: 0 10px;display: inline-block;}
+.my-notice ul li:after{width:1px;height: 5px;}
 .my-index-container{margin-top: 20px;}
 .row-offcanvas{width: 960px;margin:0 auto;}
-.my-recommand-block{border-radius: 4px;margin-bottom: 20px;border-bottom: 1px solid #e0e0e0;}
+.my-left{width: 640px;padding: 0;}
+.my-recommand-block{border-radius: 4px;margin-bottom: 20px;border-bottom: 1px solid #e0e0e0;f}
+.my-recommand-block p>i{color: #ccc;}
 .thumbnail{border: none;}
 .my-color>.panel-heading{background-color: #22b38a;color: #fff;border: 1px solid #22b38a;}
 .my-tag>a.btn{padding:1px 0px;margin-bottom: 5px;}

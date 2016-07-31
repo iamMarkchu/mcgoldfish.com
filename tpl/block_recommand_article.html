@@ -1,16 +1,15 @@
 <{foreach from=$recommandArticleList item=item}>
   <div class="col-xs-12 col-lg-12 my-recommand-block">
     <img src="<{$smarty.const.IMG_URL}><{$item.image}>" class="thumbnail" alt="">
-    <h4><span class="label label-success"><{$item.articlesource}></span> <a href="<{$item.requestpath}>"><{$item.title}></a></h4>
+    <h4><a href="<{$item.requestpath}>"><{$item.title}></a></h4>
     <p class="my-article-desc less">
       <{$item.shortDesc}>
     </p>
     <p>
-      <i class="glyphicon glyphicon-user"></i><{$item.addeditor}>&nbsp&nbsp
-      <i class="glyphicon glyphicon-eye-open"></i>&nbsp<{$item.clickcount}>&nbsp
-      <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime}>&nbsp
+      <i class="glyphicon glyphicon-user"></i><{$item.addeditor}>
+      <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime|format_article_date}>
       <{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
-        <i class="glyphicon glyphicon-tag"></i>&nbsp
+        <i class="glyphicon glyphicon-tag"></i>
         <{foreach from=$item.tagInfo item=item1}>
           <a href="<{$item1.requestpath}>"><{$item1.displayname}></a>
         <{/foreach}>
