@@ -19,4 +19,11 @@ class Category{
 		}
 		return $categoryInfo;
 	}
+	public function getCategorybyIdAndType($dataid,$datatype='category'){
+		if(empty($dataid)) return array();
+		$sql = "select c.id,c.displayname,ru.`requestpath` from category as c left join rewrite_url as ru on c.id = ru.optdataid where ru.modeltype = '{$datatype}' and ru.`status` = 'yes' and ru.optdataid = {$dataid} and ru.isjump='NO'";
+		$tmpResource = $GLOBALS['db']->query($sql);
+		$tmpResult = $GLOBALS['db']->getRow($tmpResource);
+		return $tmpResult;
+	}
 }

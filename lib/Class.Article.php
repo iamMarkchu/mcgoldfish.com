@@ -48,7 +48,9 @@ class Article
 	}
 	public function getArticleCategoryList($articleid){
 		if(empty($articleid)) return array();
-		$sql = "select c.displayname,ru.`requestpath` from category_mapping as cm left join category as c on cm.categoryid = c.id left join rewrite_url as ru on c.id = ru.optdataid where cm.datatype = 'article' and cm.`status` = 'active' and cm.optdataid = {$articleid} and ru.isjump='NO' and ru.`status` = 'yes'";
+		$sql = "select c.id,c.parentcategoryid,c.displayname,ru.`requestpath` from category_mapping as cm left join category as c on cm.categoryid = c.id left join rewrite_url as ru on c.id = ru.optdataid where cm.datatype = 'article' and cm.`status` = 'active' and cm.optdataid = {$articleid} and ru.isjump='NO' and ru.`status` = 'yes'";
+		//echo $sql;die;
 		$tmpResult = $GLOBALS['db']->getRows($sql);
+		return $tmpResult;
 	}
 }

@@ -1,6 +1,6 @@
 <div class="well comment-frame">
     <p class="bold">5人参与,8条评论</p>
-    <div class="comment-body clearfix">
+    <div class="comment-body clearfix comment-copy">
       <div class="comment-image">
         <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
       </div>
@@ -30,43 +30,30 @@
         <p class="comment-user">
           <!-- <i class="glyphicon glyphicon-user"></i>褚魁&nbsp&nbsp -->
           <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-          <span class="comment-notice">待审核不能回复!</span>
+          <span class="comment-notice">待审核!</span>
         </p>
         <p class="comment-content"></p>
       </div>
     </div>
-    <div class="comment-body clearfix small-comment" data-comment>
-      <div class="comment-image">
-        <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
-      </div>
-      <div class="comment-text">
-        <p>
-          <i class="glyphicon glyphicon-user"></i>褚魁&nbsp&nbsp
-          <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-          <a href="#" class="btn btn-success hidden btn-xs">回复</a>
-          <a href="#" class="btn btn-success hidden btn-xs">赞(5)</a>
-          <a href="#" class="btn btn-success hidden btn-xs">鄙视(6)</a>
-        </p>
-        <p>
-          文章写得不错!小伙子文章写得不错!小伙子文章写得不错!小伙子文章写得不错!小伙子
-        </p>
-      </div>
-    </div>
-    <div class="comment-body clearfix small-comment">
-      <div class="comment-image">
-        <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
-      </div>
-      <div class="comment-text">
-        <p>
-          <i class="glyphicon glyphicon-user"></i>褚魁&nbsp&nbsp
-          <i class="glyphicon glyphicon-time"></i>&nbsp刚刚&nbsp
-          <a href="#" class="btn btn-success hidden btn-xs">回复</a>
-          <a href="#" class="btn btn-success hidden btn-xs">赞(5)</a>
-          <a href="#" class="btn btn-success hidden btn-xs">鄙视(6)</a>
-        </p>
-        <p>
-          文章写得不错!小伙子文章写得不错!小伙子文章写得不错!小伙子文章写得不错!小伙子
-        </p>
-      </div>
-    </div>
+    <{if is_array($commentList) && count($commentList) > 0}>
+      <{foreach from=$commentList  item=item}>
+        <div class="comment-body clearfix small-comment" data-comment-id="<{$item.id}>">
+          <div class="comment-image">
+            <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
+          </div>
+          <div class="comment-text">
+            <p>
+              <i class="glyphicon glyphicon-user"></i><{$item.username}>&nbsp&nbsp
+              <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime}>&nbsp
+              <a href="javascript:void(0);" class="btn btn-success hidden btn-xs data-comment-reply">回复</a>
+              <a href="#" class="btn btn-success hidden btn-xs">赞(<{$item.goodvote}>)</a>
+              <a href="#" class="btn btn-success hidden btn-xs">鄙视(<{$item.badvote}>)</a>
+            </p>
+            <p>
+              <{$item.content}>
+            </p>
+          </div>
+        </div>
+      <{/foreach}>
+    <{/if}>
 </div>
