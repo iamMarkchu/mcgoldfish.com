@@ -1,0 +1,28 @@
+.banner_wrapper{ width:100%; overflow:hidden; position:relative; margin:0px auto 4em; clear: both}
+.glide{position:relative;height:276px; width:1200px; margin:0 auto}
+.glide:after,.glide:before{content:""; width:100%; height:100%; position:absolute; top:0; left:-100%; display:block; background-color:rgba(255,255,255,0.54); z-index:1}
+.glide:after{ left:100%}
+@media (max-width:1256px){.glide{width:896px}}
+@media (max-width:1079px){.glide{ width:592px; height:11.25em}}
+@media (max-width:768px){.glide{ width:auto; margin:0 16px; height:11.5em}}
+@media (max-width:690px){.glide{ height:9.75em;}}
+@media (max-width:445px){.glide{ height:7.5em}}
+@media (max-width:375px){.glide{ height:6.75em}}
+.glide__wrapper {width:100%;height:100%;list-style:none;-webkit-perspective:1000;perspective:1000;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;position:absolute;top:0;left:0}
+.glide__wrapper.dragging {cursor:-webkit-grabbing;cursor:grabbing;}
+.glide__slide {	-webkit-perspective:1000;perspective:1000;width:100%;height:100%;background-position:center center;background-repeat:no-repeat;background-size:auto 100%}
+.box {width:100%;height:100%; display:block}
+.glide__arrows {position:absolute;top:50%;width:100%;}
+.glide__arrow { position:absolute;z-index:2;display:block;top:-16px;width:32px;height:32px; background-color:rgba(50,50,50,.3);border-radius:50%; cursor:pointer}
+.glide__arrow:before, .glide__arrow:after{ content:""; display:block; position:absolute; width:12px; height:1px; background-color:#fff; -webkit-transform:rotate(45deg); transform:rotate(45deg); left:11px; top:50%; margin-top:-4px}
+.glide__arrow:after{ -webkit-transform:rotate(-45deg); transform:rotate(-45deg); margin-top:4px}
+.glide__arrow.prev {left:-40px; -webkit-transform:rotate(180deg); transform:rotate(180deg)}
+.glide__arrow.next {right:-40px}
+@media (max-width:768px){
+.glide__arrow.prev {left:8px}
+.glide__arrow.next {right:8px}}
+.glide__bullets {position:absolute;bottom:8px;width:100%;text-align:center;list-style:none;}
+.glide__bullets li {display:inline-block;background-color:#f0f0f0;width:10px;height:10px;margin:0 5px;cursor: pointer; border-radius:50%}
+.glide__bullets li:hover{ background-color:#ccc}
+.glide__bullets li.active {background-color:#ff9800}
+.glide--carousel .glide__slide {float:left;clear:none}

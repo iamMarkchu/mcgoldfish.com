@@ -1,8 +1,7 @@
-<h2>推荐文章 &nbsp<small>Recommand Blog</small></h2>
 <{foreach from=$recommandArticleList item=item}>
   <div class="col-xs-12 col-lg-12 my-recommand-block">
-    <h4><span class="label label-success"><{$item.articlesource}></span> <a href="<{$item.requestpath}>"><{$item.title}></a></h4>
     <img src="<{$smarty.const.IMG_URL}><{$item.image}>" class="thumbnail" alt="">
+    <h4><span class="label label-success"><{$item.articlesource}></span> <a href="<{$item.requestpath}>"><{$item.title}></a></h4>
     <p class="my-article-desc less">
       <{$item.shortDesc}>
     </p>
