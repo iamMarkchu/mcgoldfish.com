@@ -91,6 +91,7 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2); }
 .input-group-lg .my-search{ height: 34px; }
 .input-group-lg .my-search-button{  background-color: #22b38a; height: 34px; padding: 0 10px;}
 .my-search-button i{ color: #fff; }
+.my-article-container{margin-top: 65px;}
 .my-article-desc.less {
     max-height: 104px;
     display: -webkit-box;

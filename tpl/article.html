@@ -1,7 +1,7 @@
 <{include file="block_head.html"}>
   <body>
     <{include file="block_nav.html"}>
-    <div class="container">
+    <div class="container my-article-container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-8">
           <div class="row">
@@ -10,7 +10,7 @@
                 <input type="hidden" id="articleid" value="<{$articleInfo.id}>">
             </div>
             <{include file="block_breadcrumb.html"}>
-            <article class="well well-lg">
+            <article>
                 <{$articleInfo.content|stripcslashes}>
             </article>
             <{include file="block_article_info.html"}>
