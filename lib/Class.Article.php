@@ -14,26 +14,28 @@ class Article
 		$articleInfo['categoryInfo'] = $this->getArticleCategoryList($articleid);
 		return $articleInfo;
 	}
-	public function getRecommandArticleList(){
-		$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by maintainorder limit 8";
+	public function getArticleList($orderby='addtime',$limit=8,$isNeedDetail=false){
+		$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by {$orderby} limit 8";
 		$result = $GLOBALS['db']->getRows($sql);
-		$recommandArticleList = array();
-		foreach ($result as $k => $v) {
-			$articleid = $v['id'];
-			$result[$k] = $this->checkArticleImage($result[$k]);
-			$result[$k]['shortDesc'] = strip_tags($v['content']);
-			$result[$k]['tagInfo'] = $this->getArticleTagList($articleid);
-			$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
+		$articleList = array();
+		if($isNeedDetail){
+			foreach ($result as $k => $v) {
+				$articleid = $v['id'];
+				$result[$k] = $this->checkArticleImage($result[$k]);
+				$result[$k]['shortDesc'] = strip_tags($v['content']);
+				$result[$k]['tagInfo'] = $this->getArticleTagList($articleid);
+				$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
+			}
 		}
-		$recommandArticleList = $result;
-		return $recommandArticleList;
+		$articleList = $result;
+		return $articleList;
 	}
-	public function getNewArticeList(){
-		$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by addtime limit 8";
-		$result = $GLOBALS['db']->getRows($sql);
-		$newArticleList = $result;
-		return $newArticleList;
-	}
+	// public function getNewArticeList(){
+	// 	$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by addtime limit 8";
+	// 	$result = $GLOBALS['db']->getRows($sql);
+	// 	$newArticleList = $result;
+	// 	return $newArticleList;
+	// }
 	public function checkArticleImage($articleInfo){
 		if(empty($articleInfo['image'])){
 			$articleInfo['image'] = "/images/1.jpg";

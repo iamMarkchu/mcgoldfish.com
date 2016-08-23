@@ -2,22 +2,21 @@
   <body>
     <{include file="block_nav.html"}>
     <div class="container my-article-container">
-      <div class="row row-offcanvas row-offcanvas-right">
+      <div class="row">
         <div class="col-xs-12 col-sm-8">
           <div class="row">
             <div class="page-header">
                 <h1><{$articleInfo.title}></h1>
                 <input type="hidden" id="articleid" value="<{$articleInfo.id}>">
             </div>
-            <{include file="block_breadcrumb.html"}>
             <article>
                 <{$articleInfo.content|stripcslashes}>
             </article>
+            <{include file="block_breadcrumb.html"}>
             <{include file="block_article_info.html"}>
             <{include file="block_comment.html"}>
           </div>
         </div>
-        <{include file="block_right_area.html"}>
       </div>
     </div>
     <{include file="block_footer.html"}>

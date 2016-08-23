@@ -1,11 +1,11 @@
 <?php
 defined('IN_DS') or die('Hacking attempt');
-
 include_once(dirname(__FILE__) . '/etc/const.php');
 include_once(INCLUDE_ROOT . 'func/front.func.php');
 include_once(INCLUDE_ROOT . 'func/string.func.php');
 $db = new Mysql(DB_NAME_SLAVE, DB_HOST_SLAVE, DB_USER_SLAVE, DB_PASS_SLAVE);
 $db_master = new Mysql(DB_NAME_MASTER, DB_HOST_MASTER, DB_USER_MASTER, DB_PASS_MASTER);
+
 $tpl = new TemplateSmarty();
 
 $default_js = array(
@@ -14,9 +14,11 @@ $default_js = array(
 					  '/public/origin/js/common.js?' . VER
 					 )
 );
-$default_css = array('style.css?' . VER);
+$default_css = array('http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css','/public/origin/css/offcanvas.css?'. VER);
 $default_lang = 'zh-CN';
-$new_site_url = 'http://mcgoldfish.com';
+$site_url = 'http://mcgoldfish.com';
+$site_url_normal = 'Mcgoldfish.com';
+$site_url_short = 'Mcgoldfish';
 $year = date('Y');
 $month = date('F');
 $next3days_timestamp = strtotime("+4 day");

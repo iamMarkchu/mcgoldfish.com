@@ -6,99 +6,23 @@ if (!defined('IN_DS')) {
 class PageMeta
 {
 	function get_home_meta(){
-		$sql = 'SELECT pm.* FROM rewrite_url AS ru LEFT JOIN page_meta AS pm ON ru.PageMetaId = pm.ID WHERE ru.RequestPath = "/" ';
-		$q = $GLOBALS['db']->query($sql);
-		$r = $GLOBALS['db']->getRow($q);
-		if(!$r){
-			return array();
-		}
-		if($r['TermplateId']){
-			$sql = 'SELECT MetaTitle,MetaDesc,MetaKeyword,PageH1 FROM page_meta WHERE ID = '.intval($r['TermplateId']);
-			$q = $GLOBALS['db']->query($sql);
-			$r = $GLOBALS['db']->getRow($q);
-		}
-		$r['MetaTitle'] = $r['MetaTitle']?$r['MetaTitle']:'[new_site_str1]: Online Angebote und Gutscheine [year]';
-		$r['MetaDesc'] = $r['MetaDesc']?$r['MetaDesc']:'Alle neuen Gutscheine und Sonderaktionen findest du auf Saving Story. Günstig online shoppen war noch nie so leicht. Jetzt Gutscheincode holen und sparen.';
-
-        $r['MetaKeyword'] = $r['MetaKeyword']?$r['MetaKeyword']:'Gutscheine [year], Aktuelle Rabatte und Sonderaktionen';
-		$this->replace_meta_param($r);
+		$r['MetaTitle'] = $GLOBALS['site_url_short'].' : php技术博客,记录菜鸟成长之路 '.$GLOBALS['year'];
+		$r['MetaDesc'] = $GLOBALS['site_url_normal'].' 是一个博客类网站,主要内容涵盖了以下几方面:PHP,JS,CSS,HTML以及其他有关服务器环境搭建的知识,如果有任何问题请联系我.';
+        $r['MetaKeyword'] = 'PHP教程,PHP初学者,开发环境搭建';
 		return $r;
 	}
-
-	function replace_meta_param(&$r,$replace_data=array(),$type='now'){
-		if($type == 'now'){
-			$w_l = '[';
-			$w_r = ']';
+	function get_article_meta($info,$modeltype='article'){
+		if(empty($info)) return array();
+		$optdataid = $info['id'];
+		$sql = "select * from page_meta where optdataid = '{$optdataid}' and modeltype='{$modeltype}'";
+		$result = $GLOBALS['db']->getFirstRow($sql);
+		if(!empty($result)){
+			$r['MetaTitle'] = $result['pagetitle'];
+			$r['MetaDesc'] = $result['pagedescription'];
+			$r['pagekeyword'] = $result['MetaKeyword'];
+			return $r;
 		}else{
-			$w_l = '<';
-			$w_r = '>';
-		}
-		
-
-		$sql = 'SELECT * FROM `data_dictionary` WHERE Pid = 50';
-		$q = $GLOBALS['db']->getRows($sql);
-
-		#system data dictionary
-		if(!empty($q)){
-			$replace_from = array();
-			$replace_to = array();
-			foreach($q as $v){
-				$replace_from[] = $v['Name'];
-				$replace_to[] = $v['Code'];
-			}
-
-			
-			$r['MetaTitle'] = str_replace($replace_from, $replace_to, $r['MetaTitle']);
-			$r['MetaDesc'] = str_replace($replace_from, $replace_to, $r['MetaDesc']);
-			$r['MetaKeyword'] = str_replace($replace_from, $replace_to, $r['MetaKeyword']);
-			$r['PageH1'] = str_replace($replace_from, $replace_to, $r['PageH1']);
-		}
-
-		#system global words
-		global $global_word_tab;
-		if(!empty($global_word_tab)){
-			foreach($global_word_tab as $k=>$v){
-				$replace_from[] = $w_l.$k.$w_r;
-				$replace_to[] = $v;
-			}
-			$r['MetaTitle'] = str_replace($replace_from, $replace_to, $r['MetaTitle']);
-			$r['MetaDesc'] = str_replace($replace_from, $replace_to, $r['MetaDesc']);
-			$r['MetaKeyword'] = str_replace($replace_from, $replace_to, $r['MetaKeyword']);
-			$r['PageH1'] = str_replace($replace_from, $replace_to, $r['PageH1']);
-		}
-		
-
-		#replace data process
-		if(!empty($replace_data)){
-			foreach($replace_data as $k=>$v){
-				$replace_from[] = $w_l.$k.$w_r;
-				$replace_to[] = $v;
-			}
-			$r['MetaTitle'] = str_replace($replace_from, $replace_to, $r['MetaTitle']);
-			$r['MetaDesc'] = str_replace($replace_from, $replace_to, $r['MetaDesc']);
-			$r['MetaKeyword'] = str_replace($replace_from, $replace_to, $r['MetaKeyword']);
-			$r['PageH1'] = str_replace($replace_from, $replace_to, $r['PageH1']);
-		}
-	}
-
-	function get_meta($id){
-		if(empty($id)){
 			return array();
 		}
-
-		$sql = 'SELECT MetaTitle,MetaDesc,MetaKeyword,PageH1,TermplateId FROM page_meta WHERE ID = '.$id;
-		$q = $GLOBALS['db']->query($sql);
-		$r = $GLOBALS['db']->getRow($q);
-
-		if($r['TermplateId']){
-			$sql = 'SELECT MetaTitle,MetaDesc,MetaKeyword,PageH1 FROM page_meta WHERE ID = '.intval($r['TermplateId']);
-			$q = $GLOBALS['db']->query($sql);
-			$r = $GLOBALS['db']->getRow($q);
-		}
-
-
-		$this->replace_meta_param($r);
-		return $r;
 	}
-
 }
