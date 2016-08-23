@@ -10,8 +10,9 @@ $tpl = new TemplateSmarty();
 
 $default_js = array(
 	'header' => array(),
-	'footer' => array('/public/origin/js/jquery.js',
-					  '/public/origin/js/common.js?' . VER
+	'footer' => array('http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js',
+					  'http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js',
+					  '/public/origin/js/offcanvas.js?'.VER,
 					 )
 );
 $default_css = array('http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css','/public/origin/css/offcanvas.css?'. VER);

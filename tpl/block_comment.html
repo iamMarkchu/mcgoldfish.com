@@ -1,9 +1,6 @@
-<div class="well comment-frame">
-    <p class="bold">5人参与,8条评论</p>
+<div class="breadcrumb comment-frame">
+    <p class="bold"><{if $commentCount > 0}>共<{$commentCount}>条评论<{else}>暂无评论<{/if}></p>
     <div class="comment-body clearfix comment-copy">
-      <div class="comment-image">
-        <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
-      </div>
       <div class="comment-text">
         <p>
           <textarea class="form-control my-comment-data" rows="3" placeholder="我有话说...."></textarea>
@@ -23,9 +20,6 @@
     </div>
     <p class="bold">评论列表</p>
     <div class="comment-body clearfix small-comment hidden">
-      <div class="comment-image">
-        <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
-      </div>
       <div class="comment-text">
         <p class="comment-user">
           <!-- <i class="glyphicon glyphicon-user"></i>褚魁&nbsp&nbsp -->
@@ -38,9 +32,6 @@
     <{if is_array($commentList) && count($commentList) > 0}>
       <{foreach from=$commentList  item=item}>
         <div class="comment-body clearfix small-comment" data-comment-id="<{$item.id}>">
-          <div class="comment-image">
-            <img src="http://img.mcgoldfish.com/thumb/575d7121b6b3f.png" alt="" class="img-circle my-image" width="20px">
-          </div>
           <div class="comment-text">
             <p>
               <i class="glyphicon glyphicon-user"></i><{$item.username}>&nbsp&nbsp

@@ -1,18 +1,23 @@
 <{include file="block_head.html"}>
   <body>
     <{include file="block_nav.html"}>
-    <div class="container">
+    <div class="container my-article-container my-container">
       <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-8">
-          <div class="row">
             <div class="page-header">
-                <h1>代码分类</h1>
-                <input type="hidden" id="articleid" value="<{$articleInfo.id}>">
+                <h1><a href="<{$cateInfo.requestpath}>"><{$cateInfo.displayname}></a>
+                  <{if count(subCateList) >0}>
+                    <small>
+                      <{foreach from=$subCateList item=item}>
+                        <a href="<{$item.requestpath}>" class="btn btn-info"><{$item.displayname}></a>
+                      <{/foreach}>
+                    </small>
+                  <{/if}>
+                </h1>
             </div>
+            <{include file="block_recommand_article.html"}>
             <{include file="block_breadcrumb.html"}>
-          </div>
         </div>
-        <{include file="block_right_area.html"}>
       </div>
     </div>
     <{include file="block_footer.html"}>

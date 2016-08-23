@@ -1103,6 +1103,9 @@ class Smarty
      */
     function display($resource_name, $cache_id = null, $compile_id = null)
     {
+        $category = new Category();
+        $categoryList = $category->getPrimaryCategory($limit=5);
+        $this->assign('navList',$categoryList);
         $this->fetch($resource_name, $cache_id, $compile_id, true);
     }
 

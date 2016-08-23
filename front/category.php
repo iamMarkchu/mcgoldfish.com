@@ -4,16 +4,30 @@ define('D_PAGE_NAME', 'CATAGORY');
 $canonical_uri = $_rewriteUrlInfo['RequestPath'];
 define("D_PAGE_VALUE",	$canonical_uri);
 
-include_once 'tracking_block.php';
-
-$cacheFileName = MEM_PREX . 'category_'.$_rewriteUrlInfo['OptDataId'];
-$objCache = new Cache($cacheFileName);
-$objCache->getCacheTime();
-if (DEBUG_MODE || isset($_GET['forcerefresh']))    $mainContent = '';
-   else    $mainContent = $objCache->getCache();
-if (!$mainContent) {
-	$objCache->initialCache();
-    $tpl->display('category.html');
-	$mainContent = $objCache->endCache();
+$category = new Category();
+$categoryId = $_rewriteUrlInfo['optdataid'];
+$cateInfo = $category->getCategorybyIdAndType($categoryId);
+$tpl->assign('cateInfo',$cateInfo);
+if(empty($cateInfo['parentcategoryid'])){
+	$subCateList = $category->getCategorybyIdAndType($categoryId,'category',true);
 }
-echo $mainContent;
+$tpl->assign('subCateList',$subCateList);
+$article = new Article();
+$articleList = array();
+if(!isset($subCateList)) $cateList[] = $cateInfo;
+else $cateList = $subCateList;
+foreach ($cateList as $k => $v) {
+	$articleList = array_merge($articleList,$article->getArticleByCategory($v['id']));
+}
+$tpl->assign('articleList',$articleList);
+$pageMeta = new PageMeta();
+$meta = $pageMeta->get_article_meta($articleInfo);
+if(empty($meta))
+	$meta['MetaTitle'] = $articleInfo['title'];
+$page_header = array(
+	'meta' => $meta,
+	'css' => $default_css,
+	'js' => $default_js,
+);
+$tpl->assign('page_header',$page_header);
+$tpl->display('category.html');

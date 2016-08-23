@@ -55,4 +55,19 @@ class Article
 		$tmpResult = $GLOBALS['db']->getRows($sql);
 		return $tmpResult;
 	}
+	public function getArticleByCategory($categoryid){
+		if(empty($categoryid)) return array();
+		$sql = "select ru.`requestpath`,a.* from article as a left join category_mapping as cm on a.id = cm.optdataid left join rewrite_url as ru on a.id = ru.optdataid where cm.datatype='article'  and ru.modeltype = 'article' and ru.isjump = 'NO' and ru.`status` = 'yes' and cm.`status` = 'active' and cm.categoryid = '{$categoryid}' and a.`status` = 'active' order by a.`maintainorder`";
+		$result = $GLOBALS['db']->getRows($sql);
+		$articleList = array();
+		foreach ($result as $k => $v) {
+			$articleid = $v['id'];
+			$result[$k] = $this->checkArticleImage($result[$k]);
+			$result[$k]['shortDesc'] = strip_tags($v['content']);
+			$result[$k]['tagInfo'] = $this->getArticleTagList($articleid);
+			$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
+		}
+		$articleList = $result;
+		return $articleList;
+	}
 }

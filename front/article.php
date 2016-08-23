@@ -18,6 +18,7 @@ $tpl->assign('articleInfo',$articleInfo);
  */
 $comment = new Comment();
 $commentList = $comment->getCommentList($_opt_data_id);
+$tpl->assign('commentCount',count($commentList));
 $tpl->assign('commentList',$commentList);
 /**
  * breadcrumb

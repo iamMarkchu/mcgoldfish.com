@@ -4,7 +4,7 @@ defined('IN_DS') or die('Hacking attempt');
 
 $article = new Article();
 $recommandArticleList = $article->getArticleList('maintainorder',8,true);
-$tpl->assign('recommandArticleList',$recommandArticleList);
+$tpl->assign('articleList',$recommandArticleList);
 
 $newestArticleList = $article->getArticleList();
 $tpl->assign('newestArticleList',$newestArticleList);
@@ -21,6 +21,8 @@ $isNeedGlide = true;
 if($isNeedGlide){
 	$glideCss = array('/public/third-party/Glide.js/dist/css/glide.core.css','/public/third-party/Glide.js/dist/css/glide.theme.css');
 	$default_css = array_merge($default_css,$glideCss);
+	$glideJs = array('/public/third-party/Glide.js/dist/glide.js');
+	$default_js['footer'] = array_merge($default_js['footer'],$glideJs);
 }
 $page_header = array(
 	'meta' => $meta,
