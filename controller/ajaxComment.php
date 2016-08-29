@@ -1,5 +1,4 @@
 <?php 
-include_once dirname(dirname(__FILE__)) . '/initiate.php';
 if(strtoupper($_SERVER['REQUEST_METHOD']) == "POST" ){
 	$data['content'] = addslashes(trim($_POST['comment']));
 	$data['username'] = addslashes(trim($_POST['username']));

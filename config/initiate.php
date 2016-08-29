@@ -1,7 +1,6 @@
 <?php
 include_once(dirname(__FILE__) . '/const.php');
-include_once(INCLUDE_ROOT . 'func/front.func.php');
-include_once(INCLUDE_ROOT . 'func/string.func.php');
+include_once(INCLUDE_ROOT . 'functions/front.func.php');
 
 $db = new MysqlEx(DB_NAME_SLAVE, DB_HOST_SLAVE, DB_USER_SLAVE, DB_PASS_SLAVE);
 $db_master = new MysqlEx(DB_NAME_MASTER, DB_HOST_MASTER, DB_USER_MASTER, DB_PASS_MASTER);

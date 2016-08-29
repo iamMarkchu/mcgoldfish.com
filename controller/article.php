@@ -1,23 +1,25 @@
 <?php
 define('D_PAGE_NAME', 'ARTICLE');
-if (!(int)$_opt_data_id)    goto_404();
-$canonical_uri = $_rewriteUrlInfo['RequestPath'];
-define("D_PAGE_VALUE",	$canonical_uri);
+if (!(int)$optDataId)    die('404!');
+$canonicalUri = $urlInfo['RequestPath'];
+define("D_PAGE_VALUE",	$canonicalUri);
 
 /**
  * article
  */
 $article = new Article();
-$articleInfo = $article->getArticleInfoById($_opt_data_id);
+$articleInfo = $article->getArticleInfoById($optDataId);
 $articleInfo['content'] = nl2br($articleInfo['content']);
 $tpl->assign('articleInfo',$articleInfo);
+
 /**
  * comment
  */
 $comment = new Comment();
-$commentList = $comment->getCommentList($_opt_data_id);
+$commentList = $comment->getCommentList($optDataId);
 $tpl->assign('commentCount',count($commentList));
 $tpl->assign('commentList',$commentList);
+
 /**
  * breadcrumb
  * 获取类别信息
@@ -47,6 +49,7 @@ $page_header = array(
 	'js' => $default_js,
 );
 $tpl->assign('page_header',$page_header);
+
 $tpl->display('article.html');
 
 
