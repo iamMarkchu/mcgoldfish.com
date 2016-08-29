@@ -1,6 +1,4 @@
 <?php
-defined('IN_DS') or die('Hacking attempt');
-
 function get_page_static_nav_data(){
 	//导航条从memcache中读取
     $cacheFileName = 'glob_static_nav';
@@ -35,8 +33,6 @@ function dispatch_url($url_path) {
 		$url_path = substr($url_path, 0, $and_mark_pos);
 	}
 	
-	// if (substr($url_path, -1) != '/' && strpos($url_path, '-HIJACK') === false)
-	// 	$url_path .= '/';
 	$rewrite_url_obj = new RewriteUrl();
 	$ii = 0;
 	do {
@@ -55,22 +51,21 @@ function dispatch_url($url_path) {
 			$_r = $rewrite_url_obj->get_rewrite_url_by_id($_r['JumpRewriteUrlID']);
 		}
 		
-		if (isset($_r['IsJump']) && in_array($_r['IsJump'], array(301, 302, 404, 'HIJACK'))) {
+		if (isset($_r['isjump']) && in_array($_r['isjump'], array(301, 302, 404, 'HIJACK'))) {
 			$prev_rewrite = $_r;
 		}else {
 			if (!$_r) {
 				$_r = $prev_rewrite;
 			}
-			
 			if (isset($prev_rewrite)) {
-				if ($prev_rewrite['IsJump'] == 301 || $prev_rewrite['IsJump'] == 'HIJACK') {
+				if ($prev_rewrite['isjump'] == 301 || $prev_rewrite['isjump'] == 'HIJACK') {
 					permanent_header($_r['RequestPath'] . $left_url_str);
 				}
-				elseif ($prev_rewrite['IsJump'] == 302) {
-					temporarily_header($_r['RequestPath'] . $left_url_str);
+				elseif ($prev_rewrite['isjump'] == 302) {
+					temporarily_header($_r['requestpath'] . $left_url_str);
 				}
-				elseif ($prev_rewrite['IsJump'] == 404) {
-					goto_404($_r['RequestPath'] . $left_url_str);
+				elseif ($prev_rewrite['isjump'] == 404) {
+					goto_404($_r['requestpath'] . $left_url_str);
 				}
 			}
 			break;
@@ -82,7 +77,6 @@ function dispatch_url($url_path) {
 			goto_404();
 		}
 	} while(true);
-	
 	if ($_r['status'] == 'no')
 		goto_404();
 		

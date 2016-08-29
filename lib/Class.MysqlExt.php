@@ -1,8 +1,4 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
-
 class MysqlExt extends Mysql
 {
 	function getCreateTableSql($_table_name)

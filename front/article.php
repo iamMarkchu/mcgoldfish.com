@@ -1,10 +1,8 @@
 <?php
-defined('IN_DS')  or die('Hacking attempt');
 define('D_PAGE_NAME', 'ARTICLE');
 if (!(int)$_opt_data_id)    goto_404();
 $canonical_uri = $_rewriteUrlInfo['RequestPath'];
 define("D_PAGE_VALUE",	$canonical_uri);
-
 
 /**
  * article
@@ -37,7 +35,6 @@ if(!empty($articleInfo['categoryInfo'])){
 }
 $breadcrumb[] = array("url"=>'',"title"=>$articleInfo['title']);
 $tpl->assign('breadcrumb',$breadcrumb);
-
 
 $pageMeta = new PageMeta();
 $meta = $pageMeta->get_article_meta($articleInfo);

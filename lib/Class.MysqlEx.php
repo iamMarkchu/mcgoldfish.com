@@ -1,5 +1,4 @@
 <?php 
-defined('IN_DS') or die('Hacking attempt');
 Class MysqlEx{
 	var $host     = '';
 	var $database = '';
@@ -55,12 +54,11 @@ Class MysqlEx{
 		$result['end'] = microtime(true);
 		$result['time'] = number_format($result["end"]-$result["start"], 3, '.', ' ');
 		$result['parent'] = __FUNCTION__;
-		
-		if (!$this->queryID){
+		if (mysqli_error($this->linkID)){
 			if (DEBUG_MODE) {
 				debug_print_backtrace();
 			}
-			MyException::raiseError('query failed: $sql, ' . mysqli_error() . ', ' . mysqli_errno(), __FILE__, __LINE__);
+			MyException::raiseError('query failed: $sql, ' . mysqli_error($this->linkID) . ', ' . mysqli_errno($this->linkID), __FILE__, __LINE__);
 		}
 		
 		return $this->queryID;

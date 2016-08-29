@@ -1,5 +1,4 @@
 <?php 
-defined('IN_DS') or die ('Hacking attempt');
 /**
 * 文章类
 */

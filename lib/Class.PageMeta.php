@@ -1,8 +1,4 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
-
 class PageMeta
 {
 	function get_home_meta(){

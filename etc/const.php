@@ -1,16 +1,12 @@
 <?php
-if (!defined('IN_DS')) {
-	die('Hacking attempt');
-}
-//config
 define('VER', '2016071001');
 define('MEM_LIFT_TIME', 3600 * 24 * 30);
 define('MEM_PREX', 'mcgoldfish_');
-
 define('DEBUG_MODE', true);
 
 define('SITE_DOMAIN', '.mcgoldfish.com');
 include_once dirname(__FILE__) . '/db_www.php';
+include_once dirname(__FILE__) . '/route.php';
 define('INCLUDE_ROOT', dirname(dirname(__FILE__)).'/');
 
 define('HTTP_HOST', $_SERVER['HTTP_HOST']);
@@ -26,9 +22,7 @@ define('MAIL_SEND_ERROR_LOG_FILE', 'userMailError.log');
 
 define('TRACKING_ROBOTS_FILE_PATH', INCLUDE_ROOT . 'etc/t_robots.txt');
 define('TRACKING_IGNOREDIP_FILE_PATH', INCLUDE_ROOT . 'etc/t_ip.txt');
-//
 define('IMG_URL', 'http://img.mcgoldfish.com/');
-define('IMG_URL', 'http://img-ubuntu.mcgoldfish.com');
 
 define("SITE_NAME", 'chukui');
 define('SITE_FULL_NAME', 'mcgoldfish.com');
@@ -54,3 +48,4 @@ function __autoload($class)
 	$class_file = INCLUDE_ROOT . 'lib/Class.' . $class . '.php';
 	if(file_exists($class_file)) return include_once($class_file);
 }
+spl_autoload_register( '__autoload' );

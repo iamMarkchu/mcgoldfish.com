@@ -1,11 +1,9 @@
 <?php
-require_once(INCLUDE_ROOT . 'lib/Smarty/Smarty.class.php');
 class TemplateSmarty extends Smarty 
 {
 	function TemplateSmarty($project="",$tpl_dir="")
 	{
 		if($tpl_dir && substr($tpl_dir,0,1) != "/") $tpl_dir = INCLUDE_ROOT . $tpl_dir;
-		$this->project  = $project;
 		$this->template_dir = $tpl_dir ? $tpl_dir : INCLUDE_ROOT . 'tpl';
 		$this->compile_dir  = INCLUDE_ROOT . 'cache/smarty_c/' . $project;
 		$this->cache_dir  = INCLUDE_ROOT . 'cache/smarty_cache/' . $project;
@@ -27,7 +25,7 @@ class TemplateSmarty extends Smarty
 		{
 			if(!is_dir($this->cache_dir)) $this->mkdir_and_chmod($this->cache_dir);
 		}
-		parent::Smarty();
+		parent::__construct();
 	}
 	
 	function mkdir_and_chmod($_dir)
