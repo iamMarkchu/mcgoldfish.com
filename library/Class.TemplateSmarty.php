@@ -33,5 +33,12 @@ class TemplateSmarty extends Smarty
 		@mkdir($_dir,0777,true);
 		@chmod($_dir,0777);
 	}
+	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
+    {
+    	$categoryObj = new Category();
+    	$navList = $categoryObj->getPrimaryCategory(4);
+    	parent::assign("navList",$navList);
+        parent::display($template);
+    }
 }
 
