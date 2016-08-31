@@ -16,9 +16,9 @@ $pageMeta = new PageMeta();
 $meta = $pageMeta->get_home_meta();
 $isNeedGlide = true;
 if($isNeedGlide){
-	$glideCss = array('/third-party/Glide.js/dist/css/glide.core.css','/third-party/Glide.js/dist/css/glide.theme.css');
+	$glideCss = array('/third-party/bower_components/glidejs/dist/css/glide.core.css','/third-party/bower_components/glidejs/dist/css/glide.theme.css');
 	$default_css = array_merge($default_css,$glideCss);
-	$glideJs = array('/third-party/Glide.js/dist/glide.js');
+	$glideJs = array('/third-party/bower_components/glidejs/dist/glide.js');
 	$default_js['footer'] = array_merge($default_js['footer'],$glideJs);
 }
 $page_header = array(
