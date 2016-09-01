@@ -45,4 +45,10 @@ $(document).ready(function () {
         "autoheight": true,
     });
   }
+  if($("pre").length>0){
+    hljs.initHighlightingOnLoad();
+    $('pre').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  }
 });

@@ -1,7 +1,7 @@
 <?php
 define('D_PAGE_NAME', 'ARTICLE');
 if (!(int)$optDataId)    die('404!');
-$canonicalUri = $urlInfo['RequestPath'];
+$canonicalUri = $urlInfo['requestpath'];
 define("D_PAGE_VALUE",	$canonicalUri);
 
 /**
@@ -9,7 +9,7 @@ define("D_PAGE_VALUE",	$canonicalUri);
  */
 $article = new Article();
 $articleInfo = $article->getArticleInfoById($optDataId);
-$articleInfo['content'] = nl2br($articleInfo['content']);
+//$articleInfo['content'] = nl2br($articleInfo['content']);
 $tpl->assign('articleInfo',$articleInfo);
 
 /**
@@ -42,6 +42,14 @@ $pageMeta = new PageMeta();
 $meta = $pageMeta->get_article_meta($articleInfo);
 if(empty($meta))
 	$meta['MetaTitle'] = $articleInfo['title'];
+
+$isNeedHighLight = true;
+if($isNeedHighLight){
+	$HighLightCss = array('/third-party/bower_components/highlightjs/styles/monokai-sublime.css');
+	$default_css = array_merge($default_css,$HighLightCss);
+	$HighLightJs = array('/third-party/bower_components/highlightjs/highlight.pack.min.js');
+	$default_js['footer'] = array_merge($default_js['footer'],$HighLightJs);
+}
 
 $page_header = array(
 	'meta' => $meta,

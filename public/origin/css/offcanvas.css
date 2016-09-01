@@ -18,6 +18,8 @@ footer.footer{padding-top: 40px;background: #f9f9f9;
 footer.footer .col-md-4{ padding: 0;}
 footer.footer .footer-link{ padding-left: 50px;}
 footer.footer h4{ color: #333; font-size: 14px; font-weight: 700;}
+blockquote{border-left: 5px solid #22b38a;}
+pre{background-color: #fff;border: none;}
 img{width: 100%;}
 ul li {
     list-style: none;
@@ -168,6 +170,7 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2); }
 .my-newest-article .panel-body>div>p>span{ color: #ccc; margin-top: 20px; font-size: 14px;}  
 @media screen and (min-width: 800px){
   .my-container{width: 800px;}
+  .my-home-container{width: 960px;}
 }
 @media screen and (max-width: 767px) {
   .row-offcanvas {

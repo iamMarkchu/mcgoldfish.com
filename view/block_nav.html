@@ -1,8 +1,8 @@
 <nav class="navbar my-navbar">
-  <div class="container my-container">
+  <div class="container <{if $smarty.const.D_PAGE_NAME eq 'HOMEPAGE'}>my-home-container<{else}>my-container<{/if}>">
     <div class="navbar-header my-logo">
       <a class="navbar-brand" href="/">
-        <img src="http://img.mcgoldfish.com/albumImage/2016-08-05/57a46e6d05e20.png" >
+        <img src="/origin/images/logo.png" >
       </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse my-nav">

@@ -1,11 +1,10 @@
 <?php
-defined('IN_DS') or die('Hacking attempt');
 define('D_PAGE_NAME', 'CATAGORY');
-$canonical_uri = $_rewriteUrlInfo['RequestPath'];
-define("D_PAGE_VALUE",	$canonical_uri);
+$canonicalUri = $urlInfo['requestpath'];
+define("D_PAGE_VALUE",	$canonicalUri);
 
 $category = new Category();
-$categoryId = $_rewriteUrlInfo['optdataid'];
+$categoryId = $urlInfo['optdataid'];
 $cateInfo = $category->getCategorybyIdAndType($categoryId);
 $tpl->assign('cateInfo',$cateInfo);
 if(empty($cateInfo['parentcategoryid'])){
@@ -20,12 +19,12 @@ foreach ($cateList as $k => $v) {
 	$articleList = array_merge($articleList,$article->getArticleByCategory($v['id']));
 }
 $tpl->assign('articleList',$articleList);
-$pageMeta = new PageMeta();
-$meta = $pageMeta->get_article_meta($articleInfo);
-if(empty($meta))
-	$meta['MetaTitle'] = $articleInfo['title'];
+//$pageMeta = new PageMeta();
+//$meta = $pageMeta->get_article_meta($articleInfo);
+//if(empty($meta))
+//	$meta['MetaTitle'] = $articleInfo['title'];
 $page_header = array(
-	'meta' => $meta,
+//	'meta' => $meta,
 	'css' => $default_css,
 	'js' => $default_js,
 );

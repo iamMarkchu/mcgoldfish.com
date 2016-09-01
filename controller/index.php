@@ -1,4 +1,6 @@
 <?php
+define('D_PAGE_NAME', 'HOMEPAGE');
+define("D_PAGE_VALUE", '/');
 
 $article = new Article();
 $recommandArticleList = $article->getArticleList('maintainorder',8,true);

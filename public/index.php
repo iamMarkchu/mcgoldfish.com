@@ -4,7 +4,7 @@
  */
 include_once dirname(dirname(__FILE__)) . '/vendor/autoload.php'; 
 /**
- * 初始化所需的配置
+ * 初始化配置
  */
 include_once dirname(dirname(__FILE__)) . '/config/initiate.php';
 /**

@@ -3,6 +3,7 @@ class HttpManager
 {
 	var $script_uri = '';
 	function __construct(){
+		error_reporting(1);
 		$this->test_for_nginx();
 		$this->script_uri = isset($_SERVER['SCRIPT_URL'])?$_SERVER['SCRIPT_URL']:'';
 	}
