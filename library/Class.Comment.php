@@ -12,6 +12,7 @@ class Comment{
 			$value[] = "'".$v."'";
 		}
 		$sql = "insert into comment (".implode(",", $key).") VALUES (".implode(",",$value).")";
+		echo $sql;die;
 		$flag = $GLOBALS['db']->query($sql);
 		return $flag;
 	}

@@ -24,7 +24,7 @@ $(document).ready(function () {
       var useremail = $('.my-comment-useremail').val();
       var articleid = $('#articleid').val();
       $.ajax({
-        url: "/ajax/comment.php",
+        url: "/ajax/ajaxComment",
         type: "POST",
         data: {action:1,comment:comment,username:username,useremail:useremail,articleid:articleid},
         success:function(data){

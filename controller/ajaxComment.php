@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(strtoupper($_SERVER['REQUEST_METHOD']) == "POST" ){
 	$data['content'] = addslashes(trim($_POST['comment']));
 	$data['username'] = addslashes(trim($_POST['username']));

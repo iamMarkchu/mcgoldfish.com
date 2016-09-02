@@ -35,7 +35,7 @@
           <div class="comment-text">
             <p>
               <i class="glyphicon glyphicon-user"></i><{$item.username}>&nbsp&nbsp
-              <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime}>&nbsp
+              <i class="glyphicon glyphicon-time"></i>&nbsp<{$item.addtime|format_date_V2}>&nbsp
               <a href="javascript:void(0);" class="btn btn-success hidden btn-xs data-comment-reply">回复</a>
               <a href="#" class="btn btn-success hidden btn-xs">赞(<{$item.goodvote}>)</a>
               <a href="#" class="btn btn-success hidden btn-xs">鄙视(<{$item.badvote}>)</a>

@@ -36,7 +36,7 @@ class TemplateSmarty extends Smarty
 	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
     {
     	$categoryObj = new Category();
-    	$navList = $categoryObj->getPrimaryCategory(4);
+    	$navList = $categoryObj->getPrimaryCategory(6);
     	parent::assign("navList",$navList);
         parent::display($template);
     }
