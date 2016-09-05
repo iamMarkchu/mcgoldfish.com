@@ -4,12 +4,12 @@ if (!(int)$optDataId)    die('404!');
 $canonicalUri = $urlInfo['requestpath'];
 define("D_PAGE_VALUE",	$canonicalUri);
 
+include_once INCLUDE_ROOT."functions/tracking/index.php";
 /**
  * article
  */
 $article = new Article();
 $articleInfo = $article->getArticleInfoById($optDataId);
-//$articleInfo['content'] = nl2br($articleInfo['content']);
 $tpl->assign('articleInfo',$articleInfo);
 
 /**

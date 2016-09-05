@@ -1,0 +1,207 @@
+##############################################
+# tracking config file, used to define robots
+# ignored HTTP_USER_AGENT
+# -: part of useragent
+# ~: full of useragent
+##############################################
+-arachnophilia
+-architext
+-aspider
+-backrub
+-arachnophilia
+-architext
+-aspider
+-backrub
+-checkbot
+-Firefly
+-freecrawl
+-gazz/2.1 (gazz@nttrd.com)
+-geturl
+-googlebot
+-gulliver
+-infoseek
+-infoseeksidewinder
+-internetseer
+-lycos
+-scooter
+-searchhippo
+-slurp
+-fast-webcrawler
+-mercator
+-MSIECrawler
+-ia_archiver
+-ultraseek
+-Xenu Link Sleuth
+-Xenu's Link Sleuth
+-File Flash Spider
+-TrueRobot/1.4
+-SlySearch
+-Openfind
+-LWP::Simple
+-lwp-trivial
+-libwww-perl
+-libwww-perl/5.48
+-libwww-perl/5.52 FP
+-NPBot
+-Gigabot
+-Baiduspider
+-TurnitinBot
+-Overture-WebCrawler
+-Gaisbot
+-msnbot
+-psbot
+-ZyBorg
+-Jetbot/
+-wotbox.com
+-Mediapartners-Google
+-ShowLinks/1.0 libwww/5.4.0
+-Pompos/1.3
+-Java/
+-Ask Jeeves/Teoma
+-Z-Add Link Checker
+-MS Search 4.0 Robot
+-libwww-perl/5.65
+-libwww-perl/
+-dtSearchSpider
+-HLoader
+-IECheck
+-Java/1.4.2_04
+-Java1.3.1
+-LexiBot/1.00
+-libwww-perl/5.76
+-libwww-perl/5.63
+-Ocelli/1.1
+-NG/2.0
+-Faxobot/1.0
+-Java/1.4.2_06
+-almaden.ibm.com/cs/crawler
+-BecomeBot
+-PHPCrawl
+-Java/
+-findlinks/
+-appie 1.1
+-ColdFusion
+-ApacheBench/
+-LMQueueBot/
+-HTMLParser/
+-abot/0.1
+-aipbot/
+-OmniExplorer_Bot
+-BigCliqueBOT
+-Sensis.com.au Web Crawler
+-OmniExplorer_Bot/1.09
+-cfetch/1.0
+-CJNetworkQuality
+-GoodSeacher
+-Microsoft bCentral Submit-it Indexer
+-noxtrumbot/1.0 (crawler@noxtrum.com)
+-snap.com beta crawler
+-sna-0.0.1
+-http://robots.looksmart.com
+-Googlebot/
+-MJ12bot/
+-nicebot/
+-Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp
+-Snoopy v1.2
+-appie 1.1 (www.walhello.com)
+-AnswerBus (http://www.answerbus.com/)
+-Wget/1.8.2
+-findlinks/0.966 (+http://wortschatz.uni-leipzig.de/findlinks/)
+-NutchCVS/0.06-dev
+-POE-Component-Client-HTTP/
+-WinHttp.WinHttpRequest
+-grub-client
+-nicebot
+-livedoorCheckers/
+-Microsoft URL Control
+-Mister Pix
+-DoCoMo/2.0 P900i(c100;TB;W24H11)
+-indexer
+-internal dummy connection
+-Microsoft-WebDAV-MiniRedir
+-WatchMouse
+-Google-Sitemaps
+-sogou spider
+-SurveyBot
+-Mozilla/5.0 (compatible; iaskspider/1.0; MSIE 6.0)
+-AdsBot-Google
+-iaskspider
+-spider
+-robot
+-cralwer
+-Crawler
+-Feedfetcher
+-uTorrent/1750
+-Teemer
+-YahooFeedSeeker
+-miggibot
+-RPT-HTTPClient
+-bot
+-Sphere Scout
+-MSNPTC
+-Mail.Ru/
+-PHP/
+-WordPress/
+-Yandex/
+-Apple-PubSub/
+-AppleSyndication/
+-UniversalFeedParser/
+-SiteMonitor
+-Microsoft Data Access 
+-TwitterFeed
+-GeoHasher/
+-Xenu Link Sleuth/1.3.8
+-Mozilla/5.0 (compatible; MJ12bot/v1.4.4; http://www.majestic12.co.uk/bot.php?+)
+-CB/Nutch-1.7
+-Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+-Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)
+-Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+-Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) )
+-Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+-SiteUptime.com
+-Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)
+-Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+-Mozilla/4.0 (compatible;)
+-Ruby
+-Mozilla/5.0 (compatible; YandexImages/3.0; +http://yandex.com/bots)
+-ia_archiver (+http://www.alexa.com/site/help/webmasters; crawler@alexa.com)
+-Mozilla/5.0 (compatible; YandexImages/3.0; +http://yandex.com/bots)
+-MetaURI API
+-TencentTraveler
+-Pinterest/0.1
+-facebookexternalhit
+-WebIndex
+-python
+
+~Go 1.1 package http
+~Mozilla/5.0 (Windows NT 6.0; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+~Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.2) Firefox/3.5.2
+~AppEngine-Google; (+http://code.google.com/appengine; appid: the-guiding-light)
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+~Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.91 Safari/534.30
+~Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+~checks.panopta.com
+~User-Agent==Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1
+~linkdex.com/v2.0
+~Mozilla/4.0
+~Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.16) Gecko/20110323 Ubuntu/10.10 (maverick) Firefox/3.6.16
+~Mozilla/5.0 (Windows NT 6.0; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 1.0.3705)
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; .NET CLR 2.0.50727 ; .NET CLR 4.0.30319)
+~Mozilla/5.0 (X11; Linux x86_64)
+~Mozilla/5.0 (Windows NT 6.1; WOW64; rv:22.0) Gecko/20100101 Firefox/22.0
+~Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;  WOW64;  Trident/5.0)
+~Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4325)
+~Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+~Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.36 Safari/535.7
+~Go 1.1 package http	219.03125
+~User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
+~Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36
+~Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1;)
+~Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us; rv:1.9.2.3) Gecko/20100401 YFF35 Firefox/3.6.3
+~NING/1.0	28.375
+~Mozilla/5.0 (Windows NT 6.1; WOW64; rv:26.1) Gecko/20100101 Firefox/26.0
+~Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C)
+~Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1
+~Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; MS-RTC LM 8; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)

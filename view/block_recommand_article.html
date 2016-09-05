@@ -10,6 +10,7 @@
     <p class="user-message">
       <i class="glyphicon glyphicon-user"></i><{$item.addeditor}>&nbsp;&nbsp;
       <i class="glyphicon glyphicon-time"></i><{$item.addtime|format_date_V2}>&nbsp;&nbsp;
+      <i class="glyphicon glyphicon-eye-open"></i><{$item.clickcount}>&nbsp;&nbsp;
       <{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
         <i class="glyphicon glyphicon-tag"></i>
         <{foreach from=$item.tagInfo item=item1}>
