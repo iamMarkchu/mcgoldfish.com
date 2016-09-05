@@ -21,8 +21,8 @@ define('TRACKING_FORBIT_UAS', TRACKING_PATH.'/forbit/t_robots.txt');
 
 
 
-if (!preg_match('/(.*)(\.[^\.]+(\.[^\.]+|\.[^\.]+\.[^\.]+))$/U', $_SERVER['SERVER_NAME'], $m))
-    die("No server name!");
+//if (!preg_match('/(.*)(\.[^\.]+(\.[^\.]+|\.[^\.]+\.[^\.]+))$/U', $_SERVER['SERVER_NAME'], $m))
+//    die("No server name!");
 
 
 //include site config
