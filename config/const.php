@@ -16,7 +16,7 @@ define('TOP_HTTP_LEVEL_DOMAIN_NAME', 'http://www.mcgoldfish.com');
 
 define('STATIC_RESOURCE_ORIGIN_PATH','/public/origin');
 define('STATIC_RESOURCE_OUTTER_PATH','/public/third-party');
-define('IMG_URL', 'http://img.mcgoldfish.com/');
+define('IMG_URL', 'http://img.mcgoldfish.com');
 
 define("SITE_NAME", 'chukui');
 define('SITE_FULL_NAME', 'mcgoldfish.com');
