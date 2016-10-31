@@ -1,14 +1,10 @@
-<div class="col-xs-6 col-sm-4 sidebar-offcanvas my_right" id="sidebar">
+<div class="col-xs-12 col-sm-4" id="sidebar">
   <div class="panel panel-default my-color">
     <div class="panel-heading">本周排行</div>
     <div class="panel-body my_body">
-      <p><a href="#">backend.mcgoldfish.com后台开发日志</a>(500人看过)</p>
-      <p><a href="#">在阿里云ubuntu14.04部署nginx+php+mysql开发环境</a>(500人看过)</p>
-      <p><a href="#">后台开发计划-6月</a>(500人看过)</p>
-      <p><a href="#">mcgoldfish.com网站开发计划</a>(500人看过)</p>
-      <p><a href="#">在ubuntu下部署rsync服务实现代码同步</a>(500人看过)</p>
-      <p><a href="#">[歌曲推荐]那些背后藏着故事的歌</a>(500人看过)</p>
-      <p><a href="#">姑娘，我用你的名字写了一首歌</a>(500人看过)</p>
+        <{foreach from=$highClickArticleList item=item}>
+          <p><a href="<{$item.requestpath}>"><{$item.title}></a>(<{$item.clickcount}>人看过)</p>
+        <{/foreach}>
     </div>
   </div>
   <div class="panel panel-default my-color">
@@ -28,19 +24,22 @@
   </div>
 
   <div class="tabbable tabbable-custom">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs my-nav-tabs">
       <li role="presentation" class="active"><a href="#tab_1_1" data-toggle="tab">最新评论</a></li>
       <li role="presentation"><a href="#tab_1_3" data-toggle="tab">最新留言</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="tab_1_1">
-        <p>1</p>
-      </div>
-      <div class="tab-pane" id="tab_1_2">
-        <p>2</p>
+        <{foreach $newestCommentList as $ncl}>
+          <p>
+              <{$ncl@key+1}>.<span style="color: red;"><{$ncl.username}></span> <{$ncl.addtime|format_date_V2}> 在<a href="<{$ncl.requestpath}>"><< <{$ncl.title}> >></a>评论了: <{$ncl.content}>
+          </p>
+        <{foreachelse}>
+          <p>暂无评论!</p>
+        <{/foreach}>
       </div>
       <div class="tab-pane" id="tab_1_3">
-        <p>3</p>
+        <p>暂无留言</p>
       </div>
     </div>
   </div>
@@ -49,8 +48,12 @@
     <div class="panel-body my-body">
       <{foreach from=$newestArticleList item=item}>
         <div>
-          <a href="<{$item.requestpath}>" class="my-img-link"><span style="background-image:url(<{$smarty.const.IMG_URL}><{$item.image}>)" class="thumbnail" alt=""></span><!-- <img src="" > --></a>
-          <p ><a href="<{$item.requestpath}>" ><{$item.title}></a><span>at&nbsp;<{$item.addtime}></span></p>
+          <a href="<{$item.requestpath}>" class="my-img-link">
+            <span style="background-image:url(<{$smarty.const.IMG_URL}><{$item.image}>)" class="thumbnail" alt=""></span>
+          </a>
+          <p>
+            <a href="<{$item.requestpath}>" ><{$item.title}></a>
+            <span>at&nbsp;<{$item.addtime}></span></p>
         </div>
       <{/foreach}>
     </div>

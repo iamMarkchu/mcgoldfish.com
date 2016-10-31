@@ -4,11 +4,25 @@ define("D_PAGE_VALUE", '/');
 
 include_once INCLUDE_ROOT."functions/tracking/index.php";
 $article = new Article();
-$recommandArticleList = $article->getArticleList('maintainorder',8,true);
+$hasUsedIdList = array();
+$recommandArticleList = $article->getArticleList(array(),'maintainorder',8,true);
+list($recommandArticleList , $usedIds) = $recommandArticleList;
 $tpl->assign('articleList',$recommandArticleList);
+$hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
-$newestArticleList = $article->getArticleList();
+$highClickArticleList = $article->getArticleList($hasUsedIdList,'clickcount desc',5);
+list($highClickArticleList , $usedIds) = $highClickArticleList;
+$tpl->assign('highClickArticleList' , $highClickArticleList);
+$hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
+
+$comment = new Comment();
+$newestCommentList = $comment->getNewstCommentList();
+$tpl->assign('newestCommentList',$newestCommentList);
+
+$newestArticleList = $article->getArticleList($hasUsedIdList);
+list($newestArticleList , $usedIds) = $newestArticleList;
 $tpl->assign('newestArticleList',$newestArticleList);
+$hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
 $tag = new Tag();
 $hotTagList = $tag->getHotTag();

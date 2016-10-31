@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * 文章类
 */
@@ -13,10 +13,11 @@ class Article
 		$articleInfo['categoryInfo'] = $this->getArticleCategoryList($articleid);
 		return $articleInfo;
 	}
-	public function getArticleList($orderby='addtime',$limit=8,$isNeedDetail=false){
-		$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by {$orderby} limit 8";
-		$result = $GLOBALS['db']->getRows($sql);
-		$articleList = array();
+	public function getArticleList($usedIds,$orderby='addtime desc',$limit=8,$isNeedDetail=false){
+		if(!empty($usedIds)) $whereAdd = "and a.`id` NOT IN (".implode(",",$usedIds).")";
+			else $idList = '';
+		$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes' {$whereAdd}  order by {$orderby} limit {$limit}";
+		$result = $GLOBALS['db']->getRows($sql,"id");
 		if($isNeedDetail){
 			foreach ($result as $k => $v) {
 				$articleid = $v['id'];
@@ -26,7 +27,8 @@ class Article
 				$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
 			}
 		}
-		$articleList = $result;
+		$articleList[0] = array_values($result);
+		$articleList[1] = array_keys($result);
 		return $articleList;
 	}
 	// public function getNewArticeList(){

@@ -5,7 +5,7 @@
  *{ font-family: "微软雅黑";}
 html,
 body {
-  /*overflow-x: hidden;*/ /* Prevent scroll on narrow devices */
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
   line-height: 1.8;
   background-color: #fefefe;
 }
@@ -166,6 +166,8 @@ filter:progid:DXImageTransform.Microsoft.BasicImage(Rotation=2); }
     .my-newest-article .panel-body>div:hover p a{ color: #22b38a}
 .my-newest-article .panel-body>div>p>span{ color: #ccc; margin-top: 20px; font-size: 14px;}  
 .moblie_carousel{display: none;}
+.glide__wrapper {overflow: hidden;height: 250px;width: 6000px;}
+.glide__track .glide__slide{float: left;clear: none;}
 @media screen and (min-width: 1000px){
   .my-container{width: 800px;}
   .my-home-container{width: 960px;}
