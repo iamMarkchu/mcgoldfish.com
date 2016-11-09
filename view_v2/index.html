@@ -1,1 +1,22 @@
-tr>td>(input[type=checkbox][name=tag[]][value=$])*5
+<{include file="block_head.html"}>
+<{include file="block_header.html"}>
+	<main>
+	    <div class="page-wrap">
+			<section>
+				<{include file="block_recommand_article.html"}>
+			</section>
+			<aside>
+				<{include file="block_category_list.html"}>
+				<{include file="block_tag_list.html"}>
+				<{include file="block_new_article.html"}>
+				<{include file="block_friend_link.html"}>
+			</aside>
+			<div class="clear-fix"></div>
+	    </div>   
+	</main>
+	<{include file="block_footer.html"}>
+	<{include file="block_login.html"}>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/app.js"></script>
+</body>
+</html>

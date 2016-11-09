@@ -1,0 +1,105 @@
+<{include file="block_head.html"}>
+<{include file="block_header.html"}>
+	<main>
+	    <div class="page-wrap">
+			<section>
+				<div class="panel panel-default panel-test article-panel">
+					<div class="panel-heading">
+						<h2><{$articleInfo.title}></h2>
+						<div class="user-info">
+							<ul>
+								<li>
+									<i class="fa fa-user-circle" aria-hidden="true"></i>
+									<span>
+										<a href="#">
+											<{$articleInfo.addeditor}>
+										</a>
+									</span>
+								</li>
+								<li>
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
+									<span><{$articleInfo.addtime}></span>
+								</li>
+								<li>
+									<{foreach from=$tagInfo item=item}>
+										<a href="<{$item.requestpath}>">
+											<{$item.displayname}>
+										</a>
+									<{/foreach}>
+								</li>
+							</ul>
+							<div class="clear-fix"></div>
+						</div>
+						<div class="ar-cover">
+							<img src="/images/photo/1.jpg" alt="文章封面:title"/>
+						</div>
+					</div>
+					<div class="panel-body">
+						<article>
+							<{$articleInfo.content|stripcslashes}>
+						</article>
+					</div>
+					<div class="panel-footer">
+						<div class="pull-left user-info">
+							<ul>
+								<{foreach from=$tagInfo item=item key=k}>
+									<li>
+										<{if $k == 0}><i class="fa fa-tags" aria-hidden="true"></i><{/if}>
+										<a href="<{$item.requestpath}>">
+											<{$item.displayname}>
+										</a>
+									</li>
+								<{/foreach}>
+							</ul>
+							<div class="clear-fix"></div>
+						</div>
+						<div class="pull-right user-info">
+							<ul>
+								<li>
+									<i class="fa fa-eye" aria-hidden="true"></i>
+									<span><{$articleInfo.clickcount}></span>
+								</li>
+								<li class="hot-comment">
+									<i class="fa fa-commenting" aria-hidden="true"></i>
+									<span class="mes"><{$commentCount}></span>
+								</li>
+								<li class="good-vote">
+									<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+									<span class="vote"><{$voteCount}>0</span>		
+								</li>
+								
+							</ul>
+						</div>
+						<div class="clear-fix"></div>
+					</div>
+				</div>
+				<div class="page-render">
+					<div class="page-left pull-left">
+						<a href="#">
+							上一篇:H5直播起航
+						</a>
+					</div>
+					<div class="page-right pull-right">
+						<a href="#">
+							下一篇:H5直播起航
+						</a>
+					</div>
+					<div class="clear-fix"></div>
+				</div>
+				<{include file="block_comment.html"}>
+			</section>
+			<aside>
+				<{include file="block_category_list.html"}>
+				<{include file="block_tag_list.html"}>
+				<{include file="block_new_article.html"}>
+				<{include file="block_friend_link.html"}>
+			</aside>
+			<div class="clear-fix"></div>
+	    </div>
+	</main>
+	<{include file="block_footer.html"}>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+	<script src="/js/app.js"></script>
+</body>
+</html>

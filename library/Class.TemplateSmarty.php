@@ -36,8 +36,30 @@ class TemplateSmarty extends Smarty
 	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
     {
     	$categoryObj = new Category();
-    	$navList = $categoryObj->getPrimaryCategory(6);
-    	parent::assign("navList",$navList);
+    	$navList = [
+    				[
+    				  'displayname' => '代码',
+    				  'requestpath' => '/code.html'
+    				],
+    				[
+    				  'displayname' => '工作',
+    				  'requestpath' => '/work.html'
+    				],
+    				[
+    				  'displayname' => '游戏',
+    				  'requestpath' => '/game.html'
+    				],
+    				[
+    				  'displayname' => '电影',
+    				  'requestpath' => '/movie.html'
+    				],
+    				[
+    				  'displayname' => '音乐',
+    				  'requestpath' => '/music.html'
+    				],
+    			   ];
+    	parent::assign("navList", $navList);
+    	parent::assign("weiboUrl", init_weibo_url());
         parent::display($template);
     }
 }

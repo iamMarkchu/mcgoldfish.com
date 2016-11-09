@@ -24,6 +24,10 @@ define('SITE_CONTACT_EMAIL', 'support@mcgoldfish.com');
 define('TIME_ZONE', 'Asia/Shanghai');
 date_default_timezone_set(TIME_ZONE);
 
+define( "WB_AKEY" , '992002290' );
+define( "WB_SKEY" , '75755af7a7ede37a575d82ebf8910966' );
+define( "WB_CALLBACK_URL" , 'http://www.mcgoldfish.com/weibo_callback' );
+
 function __autoload($class)
 {
 	$class_file = INCLUDE_ROOT . 'library/Class.' . $class . '.php';

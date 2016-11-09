@@ -5,12 +5,19 @@ $canonicalUri = $urlInfo['requestpath'];
 define("D_PAGE_VALUE",	$canonicalUri);
 
 include_once INCLUDE_ROOT."functions/tracking/index.php";
+
+
 /**
  * article
  */
 $article = new Article();
 $articleInfo = $article->getArticleInfoById($optDataId);
 $tpl->assign('articleInfo',$articleInfo);
+
+/**
+ * 相关分类
+ */
+
 
 /**
  * comment
@@ -45,9 +52,15 @@ if(empty($meta))
 
 $isNeedHighLight = true;
 if($isNeedHighLight){
-	$HighLightCss = array('/third-party/bower_components/highlightjs/styles/monokai-sublime.css');
+	$HighLightCss = [
+					  '/css/main_v2_blog.css',
+					  'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css'
+					];
 	$default_css = array_merge($default_css,$HighLightCss);
-	$HighLightJs = array('/third-party/bower_components/highlightjs/highlight.pack.min.js');
+	$HighLightJs = [
+					  'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js',
+					  '/js/app.js'
+				   ];
 	$default_js['footer'] = array_merge($default_js['footer'],$HighLightJs);
 }
 
@@ -58,6 +71,7 @@ $page_header = array(
 );
 $tpl->assign('page_header',$page_header);
 
+$tpl->template_dir = INCLUDE_ROOT. "view_v2";
 $tpl->display('article.html');
 
 

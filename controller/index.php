@@ -3,10 +3,11 @@ define('D_PAGE_NAME', 'HOMEPAGE');
 define("D_PAGE_VALUE", '/');
 
 include_once INCLUDE_ROOT."functions/tracking/index.php";
-$article = new Article();
-$hasUsedIdList = array();
+$article = new Article;
+$hasUsedIdList = [];
 $recommandArticleList = $article->getArticleList(array(),'maintainorder',8,true);
 list($recommandArticleList , $usedIds) = $recommandArticleList;
+
 $tpl->assign('articleList',$recommandArticleList);
 $hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
@@ -15,7 +16,7 @@ list($highClickArticleList , $usedIds) = $highClickArticleList;
 $tpl->assign('highClickArticleList' , $highClickArticleList);
 $hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
-$comment = new Comment();
+$comment = new Comment;
 $newestCommentList = $comment->getNewstCommentList();
 $tpl->assign('newestCommentList',$newestCommentList);
 
@@ -24,14 +25,14 @@ list($newestArticleList , $usedIds) = $newestArticleList;
 $tpl->assign('newestArticleList',$newestArticleList);
 $hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
-$tag = new Tag();
+$tag = new Tag;
 $hotTagList = $tag->getHotTag();
 $tpl->assign('hotTagList',$hotTagList);
 
 //处理meta,js,css
-$pageMeta = new PageMeta();
+$pageMeta = new PageMeta;
 $meta = $pageMeta->get_home_meta();
-$isNeedGlide = true;
+$isNeedGlide = false;
 if($isNeedGlide){
 	$glideCss = array('/third-party/bower_components/glidejs/dist/css/glide.core.css','/third-party/bower_components/glidejs/dist/css/glide.theme.css');
 	$default_css = array_merge($default_css,$glideCss);
@@ -44,4 +45,5 @@ $page_header = array(
 	'js' => $default_js,
 );
 $tpl->assign('page_header',$page_header);
+$tpl->template_dir = INCLUDE_ROOT. "view_v2";
 $tpl->display("index.html");

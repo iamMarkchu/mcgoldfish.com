@@ -1,0 +1,38 @@
+<header>
+	<div class="page-wrap">
+		<div class="logo pull-left">
+			<a href="/">
+				<p class="pc-logo"><span>MC</span>GoldFish</p>
+				<img src="/images/logo.png" class="mobile-logo hidden" />
+			</a>
+		</div>
+		<div class="some-link pull-left my-cate">
+			<ul>
+				<{foreach from=$navList item=item}>
+				<li>
+					<a href="<{$item.requestpath}>"><{$item.displayname}></a>
+				</li>
+				<{/foreach}>
+			</ul>
+            <div class="clear-fix"></div>
+		</div>
+		<div class="top-search pull-left">
+			<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+        	<input class="search-input" type="text" name="s" id="search-input" value="" autocomplete="off" placeholder="搜索...">
+        </div>
+		<div class="some-link pull-right screen-right">
+			<ul>
+				<li>
+					<a href="/message.html">给我留言</a>
+				</li>
+				<li>
+					<a href="#">关于我们</a>
+				</li>
+			</ul>
+		</div>
+		<div class="fix-right exp-menu">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</div>
+		<div class="clear-fix"></div>
+	</div>
+</header>

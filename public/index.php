@@ -2,7 +2,7 @@
 /**
  * composer自动加载机制
  */
-include_once dirname(dirname(__FILE__)) . '/vendor/autoload.php'; 
+include_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
 /**
  * 初始化配置
  */

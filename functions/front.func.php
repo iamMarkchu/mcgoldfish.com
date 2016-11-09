@@ -31,3 +31,23 @@ function format_date_V2($datetime){
         return "刚刚";
     }
 }
+function rand_one_img($imgList){
+    shuffle($imgList);
+    return "http://img.mcgoldfish.com/touxiang/".$imgList[0];
+}
+function goto_404(){
+    $client_ip = $_SERVER['REMOTE_ADDR'];
+    $client_agent = $_SERVER['HTTP_USER_AGENT'];
+    $url = $_SERVER['REQUEST_URI'];
+    $visittime = date('Y-m-d H:i:s');
+    $f = fopen(INCLUDE_ROOT. 'storage/404.txt', 'a');
+    fwrite($f, $client_ip."\t".$client_agent."\t".$url."\n");
+    include_once FRONT_DIR. '404.php';
+    exit;
+}
+
+function init_weibo_url(){
+    session_start();
+    $o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
+    return $o->getAuthorizeURL( WB_CALLBACK_URL );
+}
