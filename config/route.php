@@ -4,6 +4,7 @@ $route = array(
 		"/merchant" => "merchant",
 		"/about-us/" => "about_us",
 	    "/ajax/ajaxComment" => "ajaxComment",
+	    "/ajax/action" => "ajax",
 	    "/weibo_callback" => "weiboCallback",
 	    "/weibo_login" => "weiboLogin",
 	    "/message.html" => "message"

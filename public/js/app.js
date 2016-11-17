@@ -1,9 +1,17 @@
 $(function() {
-	// var count = 10;
-	// for (var i = 0; i <= count; i++) {
-	// 	var liObj = $('.ready-clone').clone().removeClass('ready-clone').appendTo('.article-list>ul');
-	// }
-
+	var url = window.location.href;
+	if(url.indexOf('#')){
+		tmp = url.split('#');
+		block = tmp[1];
+		if($('h2[data-toggle=\''+block+'\']').length){
+			sHeight = $('h2[data-toggle=\''+block+'\']').offset().top-$(document).scrollTop();
+			$("html,body").animate(
+				{
+					scrollTop: sHeight
+				}
+			, 1000);
+		}
+	}
 	$('.my-cate ul>li').hover(function(){
 		if($(this).children('.pop-cate').hasClass('show')){
 			$(this).children('.pop-cate').removeClass('show');
@@ -22,18 +30,26 @@ $(function() {
 			right: cate_distance
 		}, 300);
 	});
-	
-	$('.login-btn').click(function(){
-		$('.page-login').toggleClass('show');
+	$('.good-vote').click(function(){
+		that = $(this);
+        articleid = $(this).attr('data-id');
+        actiontype = 'do-article-vote';
+        $.ajax({
+        	url: '/ajax/action',
+        	data: {id:articleid, action: actiontype},
+        	method: 'POST',
+        	success: function(data){
+        		if(data == '1'){
+        			var old = that.children('span.vote').html();
+        			that.children('span.vote').html(parseInt(old)+1);
+        		}else{
+        			alert('您已经点过赞了！谢谢您的参与');
+        		}
+        	}
+        });
 	});
-
-	$('.comment-submit').click(function(){
-		$('.commment-form').submit();
+	$('.hot-comment').click(function(){
+		var articleurl = $(this).parents('.panel-footer').siblings('.panel-body').find('a.data-article-url').attr('href');
+		window.location.href = articleurl + "#comment-block";
 	});
-	// if($(hljs)){
-	// 	$('pre').each(function(i, block) {
-	//     	hljs.highlightBlock(block);
-	//   	});
-	// }
-
 });

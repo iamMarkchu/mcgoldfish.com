@@ -11,14 +11,13 @@ list($recommandArticleList , $usedIds) = $recommandArticleList;
 $tpl->assign('articleList',$recommandArticleList);
 $hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
 
-$highClickArticleList = $article->getArticleList($hasUsedIdList,'clickcount desc',5);
-list($highClickArticleList , $usedIds) = $highClickArticleList;
-$tpl->assign('highClickArticleList' , $highClickArticleList);
-$hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
-
 $comment = new Comment;
 $newestCommentList = $comment->getNewstCommentList();
 $tpl->assign('newestCommentList',$newestCommentList);
+
+$category = new Category();
+$hotCategory = $category->getPrimaryCategory(4);
+$tpl->assign('hotCategory', $hotCategory);
 
 $newestArticleList = $article->getArticleList($hasUsedIdList);
 list($newestArticleList , $usedIds) = $newestArticleList;

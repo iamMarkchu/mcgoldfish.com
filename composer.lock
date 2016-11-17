@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b48850b7da32d0f14515a15b400da402",
-    "content-hash": "f0119ce3d231193fcf9c9d86693b5db3",
+    "hash": "c2d2b0941bd330db79c0ee94dc56ba66",
+    "content-hash": "573ead72999c6dc5221f8306bb412ee0",
     "packages": [
         {
             "name": "smarty/smarty",
@@ -66,7 +66,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "xiaosier/libweibo": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

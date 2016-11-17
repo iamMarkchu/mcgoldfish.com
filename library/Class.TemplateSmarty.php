@@ -35,7 +35,6 @@ class TemplateSmarty extends Smarty
 	}
 	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
     {
-    	$categoryObj = new Category();
     	$navList = [
     				[
     				  'displayname' => '代码',
@@ -58,7 +57,13 @@ class TemplateSmarty extends Smarty
     				  'requestpath' => '/music.html'
     				],
     			   ];
+        $sql = "SELECT * FROM `site_config`";
+        $result = $GLOBALS['db']->getRows($sql);
+        foreach ($result as $k => $v) {
+        	$siteConfig[$v['Key']] = $v['Value'];
+        }
     	parent::assign("navList", $navList);
+    	parent::assign("siteConfig", $siteConfig);
     	parent::assign("weiboUrl", init_weibo_url());
         parent::display($template);
     }

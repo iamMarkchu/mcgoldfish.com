@@ -30,9 +30,9 @@
 							</ul>
 							<div class="clear-fix"></div>
 						</div>
-						<div class="ar-cover">
-							<img src="/images/photo/1.jpg" alt="文章封面:title"/>
-						</div>
+						<!-- <div class="ar-cover">
+							<img src="http://img.mcgoldfish.com<{$articleInfo.image}>" alt="文章封面:title"/>
+						</div> -->
 					</div>
 					<div class="panel-body">
 						<article>
@@ -61,11 +61,11 @@
 								</li>
 								<li class="hot-comment">
 									<i class="fa fa-commenting" aria-hidden="true"></i>
-									<span class="mes"><{$commentCount}></span>
+									<span class="mes"><{$articleInfo.commentcount}></span>
 								</li>
-								<li class="good-vote">
+								<li class="good-vote" data-id="<{$articleInfo.id}>">
 									<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-									<span class="vote"><{$voteCount}>0</span>		
+									<span class="vote"><{$articleInfo.votecount}></span>		
 								</li>
 								
 							</ul>
@@ -100,6 +100,7 @@
 	<{include file="block_footer.html"}>
 	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-	<script src="/js/app.js"></script>
+	<script src="/js/app.js?ver=<{$smarty.const.VER}>"></script>
+	<script src="/js/article.js?ver=<{$smarty.const.VER}>"></script>
 </body>
 </html>

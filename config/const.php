@@ -1,5 +1,5 @@
 <?php
-define('VER', '2016071001');
+define('VER', '2016071024');
 define('MEM_LIFT_TIME', 3600 * 24 * 30);
 define('MEM_PREX', 'mcgoldfish_');
 define('DEBUG_MODE', true);

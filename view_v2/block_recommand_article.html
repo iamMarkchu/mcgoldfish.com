@@ -19,13 +19,13 @@
 					<{/if}>
 					<div class="ar-cover">
 						<a href="#">
-							<img src="/images/photo/default0<{($k)%3+1}>.jpg" alt="文章封面:title" width="250" height="300" />
+							<img src="http://img.mcgoldfish.com<{$item.image}>" alt="文章封面:title" width="250" height="300" />
 						</a>
 					</div>
 				</div>
 				<div class="panel-body">
 					<h2>
-						<a href="<{$item.requestpath}>">
+						<a href="<{$item.requestpath}>" class="data-article-url">
 							<{$item.title}>
 						</a>
 					</h2>
@@ -51,11 +51,11 @@
 						<ul>
 							<li class="hot-comment">
 								<i class="fa fa-commenting" aria-hidden="true"></i>
-								<span class="mes">9</span>
+								<span class="mes"><{$item.commentcount}></span>
 							</li>
-							<li class="good-vote">
+							<li class="good-vote" data-id="<{$item.id}>">
 								<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-								<span class="vote">9</span>		
+								<span class="vote"><{$item.votecount}></span>		
 							</li>
 						</ul>								
 					</div>
