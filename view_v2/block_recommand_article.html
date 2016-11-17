@@ -7,8 +7,8 @@
 					<{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
 					<div class="ar-label">
 						<ul>
-							<{foreach from=$item.tagInfo item=item1}>
-							<li class="ar-label-green">
+							<{foreach from=$item.tagInfo item=item1 key=k}>
+							<li class="ar-label-<{$k+1}>">
 								<a href="<{$item1.requestpath}>" title="类别:VR">
 									<{$item1.displayname}>
 								</a>
@@ -36,9 +36,7 @@
 							<li>
 								<i class="fa fa-user-circle" aria-hidden="true"></i>
 								<span>
-									<a href="#">
-										<{$item.addeditor}>
-									</a>
+									<{$item.addeditor}>
 								</span>
 							</li>
 							<li>
