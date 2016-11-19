@@ -31,12 +31,6 @@ class Article
 		$articleList[1] = array_keys($result);
 		return $articleList;
 	}
-	// public function getNewArticeList(){
-	// 	$sql = "select ru.`requestpath`,a.* from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes'  order by addtime limit 8";
-	// 	$result = $GLOBALS['db']->getRows($sql);
-	// 	$newArticleList = $result;
-	// 	return $newArticleList;
-	// }
 	public function checkArticleImage($articleInfo){
 		if(empty($articleInfo['image'])){
 			$articleInfo['image'] = "/images/1.jpg";
@@ -70,5 +64,10 @@ class Article
 		}
 		$articleList = $result;
 		return $articleList;
+	}
+	public function getArticleForNextPre($id){
+		$sql = "(select ru.`requestpath`,a.title,a.id from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes' and a.`id` > '{$id}' ORDER BY a.`id` LIMIT 1) UNION (select ru.`requestpath`,a.title,a.id from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes' and a.`id` < '{$id}' ORDER BY a.`id` DESC LIMIT 1)";
+		$result = $GLOBALS['db']->getRows($sql);
+		return $result;
 	}
 }

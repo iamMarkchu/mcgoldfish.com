@@ -1,6 +1,13 @@
 <div class="list default-list cate-list">
 	<div class="list-heading">
-		<h3><i class="fa fa-tasks h-icon" aria-hidden="true"></i>热门分类</h3>
+		<h3>
+			<i class="fa fa-tasks h-icon" aria-hidden="true"></i>
+			<{if $smarty.const.D_PAGE_NAME neq 'ARTICLE'}>
+				热门分类
+			<{else}>
+				相关分类
+			<{/if}>
+		</h3>
 	</div>
 	<div class="list-body">
 		<ul>

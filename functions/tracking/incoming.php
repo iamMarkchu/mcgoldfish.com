@@ -13,7 +13,6 @@ try {
         set_tracking_cookies();        
     }
     
-//  set_pagevisits(defined('PAGE_TYPE')? PAGE_TYPE:'', defined('PAGE_VALUE')? PAGE_VALUE:'');
     $url = '';
     $src = get_source();
     if ($src !== '') {            
@@ -32,18 +31,6 @@ try {
                 set_tracking_cookies();
             }
         }
-    }
-
-
-    if (preg_match('/(.*)[\?&]*ca=[^&]+(.*)/', ($url != ''? $url : get_request()), $m) && stripos($m[1], '/redirect-') === false && stripos($m[1], '/tracking/rd.php') === false) {
-        $url = $m[1].$m[2];        
-    }
-
-    if ($url != '') {
-        $url = rtrim($url, '?');
-        $url = rtrim($url, '&');        
-        redirect($url, '301'); 
-        exit;   
     }
 }
 catch (Exception $e) {

@@ -9,9 +9,9 @@
 			</div>
 			<div class="some-link pull-left my-cate">
 				<ul>
-					<{foreach from=$navList item=item}>
+					<{foreach from=$navList item=item key=k}>
 					<li>
-						<a href="<{$item.requestpath}>"><{$item.displayname}></a>
+						<a href="<{$k}>"><{$item.displayname}></a>
 					</li>
 					<{/foreach}>
 				</ul>

@@ -1,20 +1,23 @@
 .panel-test.article-panel{width: 95%;background-color: #fff;}
-.article-panel .panel-heading{padding: 0 10px;}
-.article-panel.panel-default>.panel-heading{background-color: #fff;margin-bottom: 30px;border: none;}
-.article-panel .panel-heading h2{padding: 10px;margin:10px;font-size: 30px; color: #333;}
-.article-panel .panel-heading .user-info {width: 100%;padding: 0 10px;margin:0 10px 30px;}
+.article-panel .panel-heading{padding: 0 25px;}
+.article-panel.panel-default>.panel-heading{background-color: #fff;margin: 20px 0;border: none;}
+.article-panel .panel-heading h1{font-size: 36px; color: #333;}
+.article-panel .panel-heading .user-info {width: 100%;color: #9B9B9B;}
 .article-panel ul li{float: left;margin-right: 20px;}
 .article-panel .panel-body article{font-size: 16px; color: #333;padding: 0 10px;}
-.article-panel .panel-body article p{margin-bottom: 28px;line-height: 28px;}
-.article-panel .panel-body article h2{font-size: 24px;margin:20px 0;font-weight: 500;}
+.article-panel .panel-body article p{margin-bottom: 15px;line-height: 28px;}
+.article-panel .panel-body article h2{font-size: 24px;margin:25px 0 15px 0;font-weight: 500;}
+.article-panel .panel-body article a {color: #22b38a;}
 .article-panel .panel-body article pre{margin-bottom: 28px;}
+.article-panel .panel-body article blockquote {border-left: 5px solid #22b38a;padding-left: 15px;background-color: #e0e0e0;}
 .article-panel .panel-body article img{width: 100%;}
 .article-panel .panel-body article hr{margin:20px 0;}
 .article-panel .panel-body ol{list-style: none;margin: 20px 0;line-height: 28px;}
 .article-panel .panel-footer {margin: 30px 10px;padding: 0 10px; border-top: 1px solid #e0e0e0;}
-.article-panel .panel-footer .user-info{margin-top: 30px;}
+.article-panel .panel-footer .user-info{margin-top: 30px;color: #9b9b9b;}
+.article-panel .panel-footer .user-info a{color: #9b9b9b;}
 
-.page-render{width: 95%;margin: 30px 0 10px ; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;}
+.page-render{width: 95%;margin: 30px 0 10px ;padding-bottom: 20px; border-bottom: 1px solid #e0e0e0;}
 
 .media-left, .media-right, .media-body {
     display: table-cell;

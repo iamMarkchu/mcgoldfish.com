@@ -1,5 +1,5 @@
 <?php
-define('VER', '2016071024');
+define('VER', rand(0, 50000));
 define('MEM_LIFT_TIME', 3600 * 24 * 30);
 define('MEM_PREX', 'mcgoldfish_');
 define('DEBUG_MODE', true);
@@ -14,12 +14,10 @@ define('FRONT_DIR', INCLUDE_ROOT . 'controller/');
 define('TOP_LEVEL_DOMAIN_NAME', 'mcgoldfish.com');
 define('TOP_HTTP_LEVEL_DOMAIN_NAME', 'http://www.mcgoldfish.com');
 
-define('STATIC_RESOURCE_ORIGIN_PATH','/public/origin');
-define('STATIC_RESOURCE_OUTTER_PATH','/public/third-party');
 define('IMG_URL', 'http://img.mcgoldfish.com');
 
 define("SITE_NAME", 'chukui');
-define('SITE_FULL_NAME', 'mcgoldfish.com');
+define('SITE_FULL_NAME', 'Mcgoldfish');
 define('SITE_CONTACT_EMAIL', 'support@mcgoldfish.com');
 define('TIME_ZONE', 'Asia/Shanghai');
 date_default_timezone_set(TIME_ZONE);

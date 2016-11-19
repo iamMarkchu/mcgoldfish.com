@@ -1,32 +1,45 @@
 <?php
 define('D_PAGE_NAME', 'CATAGORY');
-$canonicalUri = $urlInfo['requestpath'];
+$canonicalUri = isset($urlInfo['requestpath'])? $urlInfo['requestpath'] : $_SERVER['SCRIPT_URL'];
 define("D_PAGE_VALUE",	$canonicalUri);
 
-$category = new Category();
-$categoryId = $urlInfo['optdataid'];
-$cateInfo = $category->getCategorybyIdAndType($categoryId);
-$tpl->assign('cateInfo',$cateInfo);
-if(empty($cateInfo['parentcategoryid'])){
-	$subCateList = $category->getCategorybyIdAndType($categoryId,'category',true);
+global $navList;
+$staticFlag = false;
+foreach ($navList as $k => $nav) {
+    if($canonicalUri == $k){
+    	$staticFlag = true;
+    	break;
+    }
 }
-$tpl->assign('subCateList',$subCateList);
-$article = new Article();
-$articleList = array();
-if(!isset($subCateList)) $cateList[] = $cateInfo;
-else $cateList = $subCateList;
-foreach ($cateList as $k => $v) {
-	$articleList = array_merge($articleList,$article->getArticleByCategory($v['id']));
+$tpl->assign('staticFlag', $staticFlag);
+
+if($staticFlag){
+    $bindCategoryList = $navList[$canonicalUri]['bindCategoryList'];
+    if(!empty($bindCategoryList)){
+
+    }else{
+
+    }
 }
-$tpl->assign('articleList',$articleList);
-//$pageMeta = new PageMeta();
-//$meta = $pageMeta->get_article_meta($articleInfo);
-//if(empty($meta))
-//	$meta['MetaTitle'] = $articleInfo['title'];
+$category = new Category;
+$hotCategory = $category->getPrimaryCategory(4);
+$tpl->assign('hotCategory', $hotCategory);
+
+$article = new Article;
+$newestArticleList = $article->getArticleList();
+list($newestArticleList , $usedIds) = $newestArticleList;
+$tpl->assign('newestArticleList',$newestArticleList);
+$hasUsedIdList = array_merge($hasUsedIdList , $usedIds);
+
+$tag = new Tag;
+$hotTagList = $tag->getHotTag();
+$tpl->assign('hotTagList',$hotTagList);
+$default_css[] = '/css/main_v2_category.css?ver='.VER;
 $page_header = array(
-//	'meta' => $meta,
+	'meta' => $meta,
 	'css' => $default_css,
 	'js' => $default_js,
 );
 $tpl->assign('page_header',$page_header);
+$tpl->template_dir = INCLUDE_ROOT. "view_v2";
 $tpl->display('category.html');

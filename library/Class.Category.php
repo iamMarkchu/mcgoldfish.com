@@ -20,7 +20,7 @@ class Category{
 		}
 		return $categoryInfo;
 	}
-	public function getCategorybyIdAndType($dataid,$datatype='category',$isParent=false){
+	public function getCategorybyIdAndType($dataid, $datatype='category', $isParent=false){
 		if(empty($dataid)) return array();
 		if(!$isParent) $whereId = 'c.id = '.$dataid;
 		else $whereId = 'c.parentcategoryid = '.$dataid;
@@ -31,6 +31,12 @@ class Category{
 		}else{
 			$tmpResult = $GLOBALS['db']->getRows($sql);
 		}
+		return $tmpResult;
+	}
+	public function getRelatedCategoryByParent($parentCateIds ,$datatype='category'){
+		if(empty($parentCateIds)) return array();
+		$sql = "select c.id,c.displayname,c.parentcategoryid,c.articlecount,c.aliasesname,ru.`requestpath` from category as c left join rewrite_url as ru on c.id = ru.optdataid where ru.modeltype = '{$datatype}' and ru.`status` = 'yes' and c.parentcategoryid in (".implode(",", $parentCateIds).") and ru.isjump='NO'";
+		$tmpResult = $GLOBALS['db']->getRows($sql);
 		return $tmpResult;
 	}
 }

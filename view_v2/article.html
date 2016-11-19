@@ -5,15 +5,13 @@
 			<section>
 				<div class="panel panel-default panel-test article-panel">
 					<div class="panel-heading">
-						<h2><{$articleInfo.title}></h2>
+						<h1><{$articleInfo.title}></h1>
 						<div class="user-info">
 							<ul>
 								<li>
 									<i class="fa fa-user-circle" aria-hidden="true"></i>
 									<span>
-										<a href="#">
-											<{$articleInfo.addeditor}>
-										</a>
+										<{$articleInfo.addeditor}>
 									</span>
 								</li>
 								<li>
@@ -42,7 +40,7 @@
 					<div class="panel-footer">
 						<div class="pull-left user-info">
 							<ul>
-								<{foreach from=$tagInfo item=item key=k}>
+								<{foreach from=$articleInfo.tagInfo item=item key=k}>
 									<li>
 										<{if $k == 0}><i class="fa fa-tags" aria-hidden="true"></i><{/if}>
 										<a href="<{$item.requestpath}>">
@@ -75,24 +73,37 @@
 				</div>
 				<div class="page-render">
 					<div class="page-left pull-left">
-						<a href="#">
-							上一篇:H5直播起航
+						<a href="<{$nextPreArticleList.0.requestpath}>">
+							上一篇：<{$nextPreArticleList.0.title}>
 						</a>
 					</div>
 					<div class="page-right pull-right">
-						<a href="#">
-							下一篇:H5直播起航
+						<a href="<{$nextPreArticleList.1.requestpath}>">
+							<{$nextPreArticleList.1.title}>：下一篇
 						</a>
 					</div>
 					<div class="clear-fix"></div>
+					<ul class="breadcrumb">
+							<{foreach from=$breadcrumb item=item}>
+							<li>
+								<{if $item.url neq ''}>
+								<a href="<{$item.url}>"><{$item.title}>></a>
+								
+								<{else}>
+								<span><{$item.title}></span>
+								<{/if}>
+							</li>
+							<{/foreach}>
+							<div class="clear-fix"></div>
+						</ul>
 				</div>
+				<{if $showComment}>
 				<{include file="block_comment.html"}>
+				<{/if}>
 			</section>
 			<aside>
 				<{include file="block_category_list.html"}>
-				<{include file="block_tag_list.html"}>
-				<{include file="block_new_article.html"}>
-				<{include file="block_friend_link.html"}>
+				<{include file="block_rec_article_list.html"}>
 			</aside>
 			<div class="clear-fix"></div>
 	    </div>

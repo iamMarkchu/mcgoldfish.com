@@ -100,14 +100,26 @@ main .article-list .ar-label ul li{width: auto;margin-right: 10px;}
 main section{float: left;width: 75%;}
 main section .panel-body h2{height: 46px;}
 main aside{float: left;width: 25%;}
+.breadcrumb{margin-top: 20px;color: #9b9b9b;}
+ul.breadcrumb>li{margin-right: 0;float: left;}
 
-footer {background-color: #404040;color: #fff;padding-top:40px;}
-footer .footer-panel{width: 30%;float: left;margin-right: 30px;}
-footer .footer-panel .panel-heading{margin-bottom: 15px;}
-footer .footer-panel .panel-body{padding: 0;}
+footer {color: #fff;}
+footer .footer-level-1 {background-color: #555555;}
+footer .footer-panel.footer-sitemap{width: 20%;}
+footer .footer-panel{width: 30%;float: left;margin: 20px 50px 0 0;}
+footer .footer-panel .panel-heading{margin-bottom: 10px;font-size: 20px;}
+footer .footer-panel .panel-body{padding: 0;font-size: 14px;}
+footer .footer-panel.footer-sitemap .panel-body ul{margin-bottom: 10px;border-bottom: 1px solid #e0e0e0;}
+footer .footer-panel .panel-body p {margin-bottom: 10px;}
+footer .footer-panel .panel-body p a{color: #22b38a}
 footer .footer-panel .panel-body a{color: #fff;}
 footer .footer-panel .panel-body ul{width: 100%;}
-footer .footer-panel .panel-body ul li{width: 50%;float: left}
+footer .footer-panel .panel-body ul li{float: left;margin-right: 30px;margin-bottom: 10px;}
+
+footer .footer-level-2 {background-color: #404040;padding: 40px 0 20px 0;}
+footer .footer-level-2 .footer-copy{text-align: center;}
+footer .footer-level-2 .footer-copy p {margin-bottom: 20px;}
+
 
 .page-login{width: 300px;margin: 0 auto;background-color: #fff;z-index: 99;display: none;}
 .page-login.show{display: block;position: absolute;top:20%;left:30%;padding: 10px;}
