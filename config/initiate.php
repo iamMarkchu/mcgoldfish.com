@@ -12,9 +12,7 @@ $tpl->registerPlugin("function","rand_one_img","rand_one_img");
 $default_js = array(
 	'header' => array(),
 	'footer' => array('http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js',
-					  'http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js',
-					  '/origin/js/offcanvas.js?'.VER,
-					 )
+					 ),
 );
 
 $default_css = [

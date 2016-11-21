@@ -64,8 +64,9 @@ a:hover,.exp-menu:hover,.good-vote:hover,.hot-comment:hover,main section span a:
 .ar-label .ar-label-2{background-color: #E91E63;}
 
 .list {margin-bottom: 50px;}
-.list-heading {margin-bottom: 20px;}
+.list-heading {margin-bottom: 25px;}
 .default-list .list-body ul li {border-bottom: 1px solid #dde2e0;padding: 15px 0 10px 0;}
+.default-list .list-body ul li:first-child {padding-top: 0;}
 .default-list .list-body ul li span {margin-right: 6px;color: }
 .label-list ul li{float: left;background-color: #dddddd;margin-bottom:10px;margin-right:10px;padding: 5px;}
 .label-list ul li:hover,.label-list ul li:hover>a{color: #fff;background-color: #22b38a;cursor: pointer;}
@@ -83,7 +84,7 @@ header .logo {padding: 20px 0;margin-right: 15px;}
 header .logo p {font-size: 24px;color: #db3b06;font-size: bold;}
 header .logo p span {color: #22b38a;font-size: bold;}
 header .some-link ul li {float: left;font-size: 18px;padding: 23.5px 15px 23.5px 0;}
-header .top-search{border:1px solid #e0e0e0;padding: 4px;border-radius: 99px;position: absolute;right: 50px;top: 20px;width: 150px;}
+header .top-search{border:1px solid #e0e0e0;padding: 4px;border-radius: 99px;position: absolute;right: 50px;top: 15px;width: 150px;}
 header .top-search input{border:none;outline: none;padding: 4px;width: 100px;position: relative;left: 10px;}
 header .top-search a{position: absolute;right: 10px;top:8px;}
 header .top-search a i{color: #9a9a9a;}
