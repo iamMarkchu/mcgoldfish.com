@@ -1,40 +1,52 @@
 @charset "utf-8";
-*{padding: 0;margin: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;font-weight: 300;}
-body{height: 100%;}
-h2{font-size: 20px;}
-ul>li{list-style: none;}
-a{color: #000;text-decoration: none;}
-.clear-fix {clear: both;}
-.hidden {display: none;}
-.h-icon{margin-right: 10px;color: #22b38a;}
-a:hover,.exp-menu:hover,.good-vote:hover,.hot-comment:hover,main section span a:hover,main section h2>a:hover{color:#22b38a;cursor: pointer;}
-.page-wrap {max-width: 1120px;margin: 0 auto;}
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+body,ul,li,p,h1,h2,h3,h4,h5,h6,img,br,hr,table,tr,td,dl,dt,dd,form{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Microsoft YaHei","微软雅黑","MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    height: 100%;
+}
+.clear-fix {
+    clear: both;
+    font-size: 0;
+}
+ul,li{
+    list-style: none;
+}
+img{
+    border:none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover{
+    color:#22b38a;cursor: pointer;
+}
+h2{
+    font-size: 1.25em;
 }
 
-.panel {margin-bottom: 20px;background-color: #fff;border: 1px solid transparent;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);}
-.panel-default {border-color: #ddd;}
-.panel-default>.panel-heading {color: #333;}
-.panel-heading {border-bottom: 1px solid transparent;
+.hidden{
+    display: none;
+}
+.h-icon{
+    margin-right: .625em;color: #22b38a;
+}
+.page-wrap{
+    max-width: 960px;
+    margin: 0 auto;
+}
+.panel{
+    margin-bottom: 1.25em;
+    background-color: #fff;
+}
+.panel>.panel-heading{
+    color: #333;
+}
+.panel-heading{
+    border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -51,24 +63,22 @@ a:hover,.exp-menu:hover,.good-vote:hover,.hot-comment:hover,main section span a:
     border-bottom-left-radius: 3px;
 }
 
-.panel-test{
-    width: 378px;
+.ar-label .ar-label-1{
+    background-color: #03A9F4;
 }
-.panel-test .ar-cover img {width: 100%;}
-.panel-test .panel-heading {position: relative;width: 100%;}
-.panel-test .panel-heading .ar-label{position: absolute;font-size: 1em;color: #fff;width: 100%;}
-.panel-test .panel-heading .ar-label ul li{float:left;padding: 5px 10px;margin-right: 15px;}
-.panel-test .panel-heading .ar-label ul li a{color: #fff;}
-.panel-test .panel-footer {background-color: #fff;border-top: none;}
-.ar-label .ar-label-1{background-color: #03A9F4;}
-.ar-label .ar-label-2{background-color: #E91E63;}
+.ar-label .ar-label-2{
+    background-color: #E91E63;
+}
 
-.list {margin-bottom: 50px;}
-.list-heading {margin-bottom: 25px;}
-.default-list .list-body ul li {border-bottom: 1px solid #dde2e0;padding: 15px 0 10px 0;}
-.default-list .list-body ul li:first-child {padding-top: 0;}
-.default-list .list-body ul li span {margin-right: 6px;color: }
-.label-list ul li{float: left;background-color: #dddddd;margin-bottom:10px;margin-right:10px;padding: 5px;}
+.list{
+    margin-bottom: 3.125em;
+}
+.list-heading {margin-bottom: 1.5em;}
+.default-list ul.list-body li {border-bottom: 1px solid #dde2e0;padding: 15px 0 10px 0;}
+.default-list ul.list-body li:first-child {padding-top: 0;}
+.default-list ul.list-body li span {margin-right: 6px;color: }
+.label-list ul li{float: left;margin-bottom:10px;margin-right:10px;padding: 5px; border: 1px solid #e0e0e0; border-radius: 3px; }
+.label-list ul li a{color: #999; font-size: .8em;}
 .label-list ul li:hover,.label-list ul li:hover>a{color: #fff;background-color: #22b38a;cursor: pointer;}
 .new-list span{background-color: #9ae380;padding: 5px;color: #fff;}
 .new-list ul li{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
@@ -80,29 +90,36 @@ a:hover,.exp-menu:hover,.good-vote:hover,.hot-comment:hover,main section span a:
 header {border-bottom: 1px solid #e0e0e0;border-top: 3px solid #22b38a;}
 header .header-left{float: left; width: 75%;position: relative;}
 header .header-right{float: left; width: 25%;}
-header .logo {padding: 20px 0;margin-right: 15px;}
-header .logo p {font-size: 24px;color: #db3b06;font-size: bold;}
+header .logo {padding: 1.25em 0;margin-right: 1em;}
+header .logo p {font-size: 1.5em;color: #db3b06;font-size: bold;}
 header .logo p span {color: #22b38a;font-size: bold;}
-header .some-link ul li {float: left;font-size: 18px;padding: 23.5px 15px 23.5px 0;}
-header .top-search{border:1px solid #e0e0e0;padding: 4px;border-radius: 99px;position: absolute;right: 50px;top: 15px;width: 150px;}
-header .top-search input{border:none;outline: none;padding: 4px;width: 100px;position: relative;left: 10px;}
-header .top-search a{position: absolute;right: 10px;top:8px;}
-header .top-search a i{color: #9a9a9a;}
-header .some-link.my-cate ul li:hover>a,header .some-link.my-cate ul li:hover{color:#fff;background-color: #22b38a;cursor: pointer;}
-header .some-link.my-cate ul li{position: relative;padding-left: 15px;}
-header .fix-right{position: absolute;right: 20px;top:20px;display: none;}
-header .fix-right i{font-size: 20px;}
+header ul.some-link li {float: left;font-size: 1.125em;padding: 23.5px 15px 23.5px 0;}
+header .top-search{border:1px solid #e0e0e0;padding: .25em;border-radius: 5px;float:left;width: 5.6em;position: relative;margin:1.125em 0 1.125em 1.25em;}
+header .top-search input{border:none;outline: none;padding: .25em;width: 3.125em;position: relative;left: 0px;}
+header .top-search a{position: absolute;right: .625em;top:.3125em;}
+header .top-search a i{color: #e0e0e0;}
+header ul.some-link.my-cate li:hover>a,header ul.some-link.my-cate li:hover{color:#fff;background-color: #22b38a;cursor: pointer;}
+header ul.some-link.my-cate li{position: relative;padding-left: 1em;}
+header .exp-menu{position: absolute;right: .625em;top:1em;display: none;}
+header .exp-menu i{font-size: 1.25em;color: #22b38a;}
 
-main {background-color: #ebf0ee;padding-top: 60px;}
-main .article-list ul li {float: left;width: 50%;}
-main .article-list .pull-right.user-info ul li{margin-right: 0; margin-left: 20px;}
-main .article-list .user-info ul li{width: auto;margin-right: 20px;}
-main .article-list .ar-label ul li{width: auto;margin-right: 10px;}
+main {background-color: #ebf0ee;padding-top: 3.75em;}
+main ul.article-list{overflow: hidden;width: 100%;}
+main ul.article-list li {width: 45%;float: left;margin-right: 4%;}
+main .article-list ul.pull-right.user-info li{margin-right: 0; margin-left: 20px;}
+main .article-list ul.user-info li{width: auto;margin-right: 20px;}
+main .article-list ul.ar-label li{width: auto;margin-right: 10px;}
 main section{float: left;width: 75%;}
 main section .panel-body h2{height: 46px;}
 main aside{float: left;width: 25%;}
-.breadcrumb{margin-top: 20px;color: #9b9b9b;}
-ul.breadcrumb>li{margin-right: 0;float: left;}
+.panel-test{ border: none; }
+.panel-test:hover{box-shadow: 0 4px 6px #e4e4e4;}
+.panel-test .ar-cover img {width: 100%;}
+.panel-test .panel-heading {position: relative;width: 100%;}
+.panel-test .panel-heading .ar-label{position: absolute;font-size: 1em;color: #fff;width: 100%;}
+.panel-test .panel-heading ul.ar-label li{float:left;padding: 5px 10px;margin-right: 15px;}
+.panel-test .panel-heading ul.ar-label li a{color: #fff;}
+.panel-test .panel-footer {background-color: #fff;border-top: none;}
 
 footer {color: #fff;}
 footer .footer-level-1 {background-color: #555555;}
@@ -126,26 +143,67 @@ footer .footer-level-2 .footer-copy p {margin-bottom: 20px;}
 .page-login.show{display: block;position: absolute;top:20%;left:30%;padding: 10px;}
 .layer{opacity:0.3; filter: alpha(opacity=30); background-color:#000;height:100%;width:100%;}
 @media (max-width: 992px){
-    .screen-right{display: none;}
-    .page-wrap{width: 95%;margin:0 auto;}
-    main .article-list ul li{width: 45%;margin-right: 10px;}
-    .panel-test{width: 100%;}
+    .page-wrap{width: 95%;}
+    header .header-left{width: 85%;}
+    .header-right{display: none;}
 }
 @media (max-width: 768px){
-    header .logo{margin-bottom: 0px;padding-top: 0;}
+    .page-wrap{width: 90%;}
+    header .logo{margin-bottom: 0px;padding:0;position: relative;top: 5px;}
+    header .header-left{width: 100%;}
     .pc-logo{display: none;}
-    .mobile-logo{display: block;}
-    .my-cate{position: absolute;right: -70px;top:60px;z-index: 99;background-color: #fff;}
-    header .some-link.my-cate ul li{float: none;}
-    header .some-link.my-cate .pop-cate{top: 0;left: -68px;}
-    header .fix-right{display: block;}
-    main {padding-top: 40px;}
+    .mobile-logo{display: inline-block;}
+    main {padding-top: 2.5em;}
     main section{width: 100%;}
     main aside{width: 100%;}
-    main .article-list ul li{width: 100%;}
+    main ul.article-list li{width: 47.5%;}
+    main ul.article-list li:nth-child(even){margin-right: 0;}
+
+}
+@media (max-width: 650px){
+    .page-wrap{width: 95%;}
+    header{position: relative;}
+    header .logo{top: 0;}
+    header .exp-menu{display: block;}
+    main ul.article-list li{width: 100%;}
+    .exp-menu div {
+        width: 30px;
+        height: 5px;
+        background-color: black;
+        margin: 5px 0;
+        background-color: #22b38a;
+    }
+    .my-cate {
+        /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+        height: 64px;
+        width: 0;
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        right: 0;
+        top: 0;
+        background-color: #fff;
+        overflow-x: hidden; /* Disable horizontal scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+
+    /* Position the close button (top right corner) */
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+
 }
 @media (max-width: 478px){
-    .top-search{display: none;}
+    main{padding-top: 1em;}
+    .footer-level-1{display: none;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
 

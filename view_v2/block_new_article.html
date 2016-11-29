@@ -2,15 +2,13 @@
 	<div class="list-heading">
 		<h3><i class="fa fa-calendar h-icon" aria-hidden="true"></i>最新文章</h3>
 	</div>
-	<div class="list-body">
-		<ul>
-			<{foreach from=$newestArticleList  item=item}>
-			    <li>
-					<a href="<{$item.requestpath}>">
-						<{$item.title}>
-					</a>
-				</li>
-			<{/foreach}>
-		</ul>
-	</div>
+	<ul class="list-body">
+		<{foreach from=$newestArticleList  item=item}>
+		    <li>
+				<a href="<{$item.requestpath}>">
+					<{$item.title}>
+				</a>
+			</li>
+		<{/foreach}>
+	</ul>
 </div>

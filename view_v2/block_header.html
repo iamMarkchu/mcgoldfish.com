@@ -1,42 +1,36 @@
 <header>
 	<div class="page-wrap">
 		<div class="header-left">
-			<div class="logo pull-left">
-				<a href="/">
-					<p class="pc-logo"><span>MC</span>GoldFish</p>
-					<img src="/images/logo.png" class="mobile-logo hidden"/>
-				</a>
+			<a href="/" class="logo pull-left">
+				<p class="pc-logo"><span>MC</span>GoldFish</p>
+				<img src="/images/logo.png" class="mobile-logo hidden"/>
+			</a>
+			<ul class="some-link pull-left my-cate">
+				<{foreach from=$navList item=item key=k}>
+				<li>
+					<a href="<{$k}>"><{$item.displayname}></a>
+				</li>
+				<{/foreach}>
+				<div class="top-search">
+					<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+	        		<input class="search-input" type="text" name="s" id="search-input" value="" autocomplete="off" placeholder="搜索...">
+	        	</div>
+			</ul>
+	        <div class="pull-right exp-menu" onclick="openNav()">
+				<div></div>
+				<div></div>
+				<div></div>
 			</div>
-			<div class="some-link pull-left my-cate">
-				<ul>
-					<{foreach from=$navList item=item key=k}>
-					<li>
-						<a href="<{$k}>"><{$item.displayname}></a>
-					</li>
-					<{/foreach}>
-				</ul>
-	            <div class="clear-fix"></div>
-			</div>
-			<div class="top-search">
-				<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-	        	<input class="search-input" type="text" name="s" id="search-input" value="" autocomplete="off" placeholder="搜索...">
-	        </div>
-	        <div class="clear-fix"></div>
 		</div>
 		<div class="header-right">
-			<div class="some-link pull-left">
-				<ul>
-					<li>
-						<a href="/message.html">给我留言</a>
-					</li>
-					<li>
-						<a href="#">关于我们</a>
-					</li>
-				</ul>
-			</div>
-			<div class="fix-right exp-menu">
-				<i class="fa fa-bars" aria-hidden="true"></i>
-			</div>
+			<ul class="some-link pull-left">
+				<li>
+					<a href="/message.html">给我留言</a>
+				</li>
+				<li>
+					<a href="#">关于我们</a>
+				</li>
+			</ul>
 		</div>
 		<div class="clear-fix"></div>
 	</div>

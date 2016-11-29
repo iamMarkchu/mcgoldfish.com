@@ -13,15 +13,28 @@ foreach ($navList as $k => $nav) {
 }
 $tpl->assign('staticFlag', $staticFlag);
 
+$category = new Category;
+$article = new Article;
 if($staticFlag){
     $bindCategoryList = $navList[$canonicalUri]['bindCategoryList'];
     if(!empty($bindCategoryList)){
-
+        $categoryList = $category->getCategoryForStatic($bindCategoryList);
+        $articleList = $article->getArticleForCategories($bindCategoryList);
     }else{
-
+        $categoryList = [];
     }
+    $tpl->assign('pageh1', $navList[$canonicalUri]['icon'].$navList[$canonicalUri]['displayname']);
+    $tpl->assign('categoryList', $categoryList);
+    $tpl->assign('articleList', $articleList);
+}else{
+
 }
-$category = new Category;
+
+
+
+
+
+
 $hotCategory = $category->getPrimaryCategory(4);
 $tpl->assign('hotCategory', $hotCategory);
 

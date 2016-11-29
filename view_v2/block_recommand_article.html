@@ -1,67 +1,54 @@
-<div class="article-list in-home">
-	<ul>
-		<{foreach from=$articleList item=item key=k}>
-		<li>
-			<div class="panel panel-default panel-test">
-				<div class="panel-heading">
-					<{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
-					<div class="ar-label">
-						<ul>
-							<{foreach from=$item.tagInfo item=item1 key=k}>
-							<li class="ar-label-<{$k+1}>">
-								<a href="<{$item1.requestpath}>" title="类别:VR">
-									<{$item1.displayname}>
-								</a>
-							</li>
-							<{/foreach}>
-						</ul>
-					</div>
-					<{/if}>
-					<div class="ar-cover">
-						<a href="<{$item.requestpath}>">
-							<img src="http://img.mcgoldfish.com<{$item.image}>" alt="文章封面:title" width="250" height="300" />
-						</a>
-					</div>
-				</div>
-				<div class="panel-body">
-					<h2>
-						<a href="<{$item.requestpath}>" class="data-article-url">
-							<{$item.title}>
-						</a>
-					</h2>
-				</div>
-				<div class="panel-footer">
-					<div class="pull-left user-info">
-						<ul>
-							<li>
-								<i class="fa fa-user-circle" aria-hidden="true"></i>
-								<span>
-									<{$item.addeditor}>
-								</span>
-							</li>
-							<li>
-								<i class="fa fa-clock-o" aria-hidden="true"></i>
-								<span><{$item.addtime|format_date_V2}></span>
-							</li>
-						</ul>
-					</div>
-					<div class="pull-right user-info">
-						<ul>
-							<li class="hot-comment">
-								<i class="fa fa-commenting" aria-hidden="true"></i>
-								<span class="mes"><{$item.commentcount}></span>
-							</li>
-							<li class="good-vote" data-id="<{$item.id}>">
-								<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-								<span class="vote"><{$item.votecount}></span>		
-							</li>
-						</ul>								
-					</div>
-					<div class="clear-fix"></div>
-				</div>
-			</div>
-		</li>
-		<{/foreach}>
-	</ul>
-	<div class="clear-fix"></div>
-</div>
+<ul class="article-list in-home">
+	<{foreach from=$articleList item=item key=k}>
+	<li class="panel panel-test">
+		<div class="panel-heading">
+			<{if is_array($item.tagInfo) && count($item.tagInfo)>0}>
+			<ul class="ar-label">
+				<{foreach from=$item.tagInfo item=item1 key=k}>
+				<li class="ar-label-<{$k+1}>">
+					<a href="<{$item1.requestpath}>" title="类别:VR">
+						<{$item1.displayname}>
+					</a>
+				</li>
+				<{/foreach}>
+			</ul>
+			<{/if}>
+			<a href="<{$item.requestpath}>" class="ar-cover">
+				<img src="http://img.mcgoldfish.com<{$item.image}>" alt="文章封面:title" width="250" height="250" />
+			</a>
+		</div>
+		<div class="panel-body">
+			<h2>
+				<a href="<{$item.requestpath}>" class="data-article-url">
+					<{$item.title}>
+				</a>
+			</h2>
+		</div>
+		<div class="panel-footer">
+			<ul class="pull-left user-info">
+				<li>
+					<i class="fa fa-user-circle" aria-hidden="true"></i>
+					<span>
+						<{$item.addeditor}>
+					</span>
+				</li>
+				<li>
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<span><{$item.addtime|format_date_V2}></span>
+				</li>
+			</ul>
+			<ul class="pull-right user-info">
+				<li class="hot-comment">
+					<i class="fa fa-commenting" aria-hidden="true"></i>
+					<span class="mes"><{$item.commentcount}></span>
+				</li>
+				<li class="good-vote" data-id="<{$item.id}>">
+					<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+					<span class="vote"><{$item.votecount}></span>		
+				</li>
+			</ul>								
+			<div class="clear-fix"></div>
+		</div>
+	</li>
+	<{/foreach}>
+</ul>

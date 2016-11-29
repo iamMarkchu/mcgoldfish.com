@@ -6,13 +6,14 @@ define('D_PAGE_NAME', 'ARTICLE');
 define("D_PAGE_VALUE",	$canonicalUri);
 
 
-include_once INCLUDE_ROOT."functions/tracking/index.php";
+//include_once INCLUDE_ROOT."functions/tracking/index.php";
 
 /**
  * article
  */
 $article = new Article;
 $articleInfo = $article->getArticleInfoById($optDataId);
+
 $tpl->assign('articleInfo',$articleInfo);
 
 /**
@@ -78,7 +79,6 @@ if(!empty($articleInfo['categoryInfo'])){
 }else{
 	$breadcrumb[] = array("url"=>'/all-articles.html',"title"=>'所有文章');
 }
-$breadcrumb[] = array("url"=>'',"title"=>$articleInfo['title']);
 
 $tpl->assign('breadcrumb',$breadcrumb);
 
@@ -112,9 +112,9 @@ $tpl->template_dir = INCLUDE_ROOT. "view_v2";
 ob_start();
 $tpl->display('article.html');
 $content = ob_get_contents();
-$order   = array("\r\n", "\n", "\r");
-$content=str_replace($order, "", $content);
-$content = preg_replace("/[\s]+/is"," ",$content);
+//$order   = array("\r\n", "\n", "\r");
+//$content=str_replace($order, "", $content);
+//$content = preg_replace("/[\s]+/is"," ",$content);
 ob_end_clean();
 $modtimestamp = "<!-- last mod time:".date("Y-m-d H:i:s")." -->\n";
 echo  $content.$modtimestamp;

@@ -16,7 +16,6 @@ $default_js = array(
 );
 
 $default_css = [
-				'/css/normalize.css',
 				'/css/main_v2.css?ver'.VER,
 				'/css/font-awesome/css/font-awesome.min.css',
 				];
@@ -26,27 +25,32 @@ $navList = [
     			'/code.html' => [
                       'displayname' => '代码',
                       'bindCategoryList' => [10304,10300,10299,10298],
-                      'description' => '写代码是一件快乐的事情，因为写代码的时候什么都不会去想，烦恼自然也丢到脑后去了，非常的开心'
+                      'description' => '写代码是一件快乐的事情，因为写代码的时候什么都不会去想，烦恼自然也丢到脑后去了，非常的开心',
+                      'icon' => '<i class="fa fa-code" aria-hidden="true"></i>'
                     ],
     			'/work.html' =>	[
     				  'displayname' => '工作',
                       'bindCategoryList' => [],
-                      'description' => ''
+                      'description' => '',
+                      'icon' => '<i class="fa fa-gavel" aria-hidden="true"></i>'
     				],
     			'/game.html' =>	[
     				  'displayname' => '游戏',
                       'bindCategoryList' => [10302],
-                      'description' => ''
+                      'description' => '',
+                      'icon' => '<i class="fa fa-gamepad" aria-hidden="true"></i>'
     				],
     			'/movie.html' =>	[
     				  'displayname' => '电影',
                       'bindCategoryList' => [],
-                      'description' => ''
+                      'description' => '',
+                      'icon' => '<i class="fa fa-video-camera" aria-hidden="true"></i>'
     				],
     			'/music.html' =>	[
     				  'displayname' => '音乐',
                       'bindCategoryList' => [],
-                      'description' => ''
+                      'description' => '',
+                      'icon' => '<i class="fa fa-music" aria-hidden="true"></i>'
     				],
     			   ];
 $default_lang = 'zh-CN';

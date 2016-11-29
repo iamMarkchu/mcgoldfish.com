@@ -5,29 +5,34 @@
 			<section>
 				<div class="panel panel-default panel-test article-panel">
 					<div class="panel-heading">
-						<h1><{$articleInfo.title}></h1>
-						<div class="user-info">
-							<ul>
-								<li>
-									<i class="fa fa-user-circle" aria-hidden="true"></i>
-									<span>
-										<{$articleInfo.addeditor}>
-									</span>
-								</li>
-								<li>
-									<i class="fa fa-clock-o" aria-hidden="true"></i>
-									<span><{$articleInfo.addtime}></span>
-								</li>
-								<li>
-									<{foreach from=$tagInfo item=item}>
-										<a href="<{$item.requestpath}>">
-											<{$item.displayname}>
-										</a>
-									<{/foreach}>
-								</li>
-							</ul>
-							<div class="clear-fix"></div>
+						<div class="breadcrumb">
+							<{foreach from=$breadcrumb item=item key=k}>
+								<a href="<{$item.url}>"><{$item.title}></a>
+								<{if $k+1 != count($breadcrumb)}>
+								>
+								<{/if}>
+							<{/foreach}>
 						</div>
+						<h1><{$articleInfo.title}></h1>
+						<ul class="user-info">
+							<li>
+								<i class="fa fa-user-circle" aria-hidden="true"></i>
+								<span>
+									<{$articleInfo.addeditor}>
+								</span>
+							</li>
+							<li>
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								<span><{$articleInfo.addtime}></span>
+							</li>
+							<li>
+								<{foreach from=$tagInfo item=item}>
+									<a href="<{$item.requestpath}>">
+										<{$item.displayname}>
+									</a>
+								<{/foreach}>
+							</li>
+						</ul>
 						<!-- <div class="ar-cover">
 							<img src="http://img.mcgoldfish.com<{$articleInfo.image}>" alt="文章封面:title"/>
 						</div> -->
@@ -83,19 +88,6 @@
 						</a>
 					</div>
 					<div class="clear-fix"></div>
-					<ul class="breadcrumb">
-							<{foreach from=$breadcrumb item=item}>
-							<li>
-								<{if $item.url neq ''}>
-								<a href="<{$item.url}>"><{$item.title}>></a>
-								
-								<{else}>
-								<span><{$item.title}></span>
-								<{/if}>
-							</li>
-							<{/foreach}>
-							<div class="clear-fix"></div>
-						</ul>
 				</div>
 				<{if $showComment}>
 				<{include file="block_comment.html"}>

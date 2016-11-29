@@ -1,26 +1,25 @@
-<div class="category-article-list">
-	<ul>
-		<li>
-			<div class="panel-ca-article">
-				<div class="panel-ca-left">
-					<img src="http://img.mcgoldfish.com/article/2016-11-15/582afba4bdec5.png" width="210" alt="">
-				</div>
-				<div class="panel-ca-right">
-					<h2>nginx配合apache一起构建应用</h2>
-					<p>nginx和apache都是WEB服务器，但各有各的优缺点，搭配起来使用，最合适不过了。nginx比较轻量级，高并发能力强，对静态文件处理能力强，也能做反向代理服务器，所以将....</p>
-					<ul class="ca-user-info">
-						<li>
-							<i class="fa fa-user-circle" aria-hidden="true"></i>
-							<span>褚魁</span>
-						</li>
-						<li>
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<span>4天前</span>
-						</li>
-					</ul>
-				</div>
-				<div class="clear-fix"></div>
+<ul class="category-article-list">
+	<{foreach from=$articleList item=item}>
+	<li class="panel-ca-article">
+		<a href="<{$item.requestpath}>">
+			<div class="panel-ca-left">
+				<img src="http://img.mcgoldfish.com<{$item.image}>" width="" alt="">
 			</div>
-		</li>
-	</ul>
-</div>
+			<div class="panel-ca-right">
+				<h2><{$item.title}></h2>
+				<p>nginx和apache都是WEB服务器，但各有各的优缺点，搭配起来使用，最合适不过了。nginx比较轻量级，高并发能力强，对静态文件处理能力强，也能做反向代理服务器，所以将....</p>
+				<ul class="ca-user-info">
+					<li>
+						<i class="fa fa-user-circle" aria-hidden="true"></i>
+						<span><{$item.addeditor}></span>
+					</li>
+					<li>
+						<i class="fa fa-clock-o" aria-hidden="true"></i>
+						<span><{$item.addtime|format_date_V2}></span>
+					</li>
+				</ul>
+			</div>
+		</a>
+	</li>
+	<{/foreach}>
+</ul>

@@ -65,6 +65,21 @@ class Article
 		$articleList = $result;
 		return $articleList;
 	}
+	public function getArticleForCategories($categoryids){
+		if(empty($categoryids)) return array();
+		$sql = "select ru.`requestpath`,a.* from article as a left join category_mapping as cm on a.id = cm.optdataid left join rewrite_url as ru on a.id = ru.optdataid left join category as c on c.id = cm.categoryid where cm.datatype='article'  and ru.modeltype = 'article' and ru.isjump = 'NO' and ru.`status` = 'yes' and cm.`status` = 'active' and (c.parentcategoryid in (".implode(",", $categoryids).") or c.id in (".implode(",", $categoryids).")) and a.`status` = 'active' order by a.`maintainorder`";
+		$result = $GLOBALS['db']->getRows($sql);
+		$articleList = array();
+		foreach ($result as $k => $v) {
+			$articleid = $v['id'];
+			$result[$k] = $this->checkArticleImage($result[$k]);
+			$result[$k]['shortDesc'] = strip_tags($v['content']);
+			$result[$k]['tagInfo'] = $this->getArticleTagList($articleid);
+			$result[$k]['categoryInfo'] = $this->getArticleCategoryList($articleid);
+		}
+		$articleList = $result;
+		return $articleList;
+	}
 	public function getArticleForNextPre($id){
 		$sql = "(select ru.`requestpath`,a.title,a.id from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes' and a.`id` > '{$id}' ORDER BY a.`id` LIMIT 1) UNION (select ru.`requestpath`,a.title,a.id from article as a left join rewrite_url as ru on a.id = ru.optdataid where a.`status` = 'active' and ru.modeltype = 'article' and ru.isjump='NO' and ru.`status` = 'yes' and a.`id` < '{$id}' ORDER BY a.`id` DESC LIMIT 1)";
 		$result = $GLOBALS['db']->getRows($sql);

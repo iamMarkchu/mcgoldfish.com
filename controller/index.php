@@ -2,7 +2,7 @@
 define('D_PAGE_NAME', 'HOMEPAGE');
 define("D_PAGE_VALUE", '/');
 
-include_once INCLUDE_ROOT."functions/tracking/index.php";
+//include_once INCLUDE_ROOT."functions/tracking/index.php";
 $article = new Article;
 $hasUsedIdList = [];
 $recommandArticleList = $article->getArticleList(array(),'maintainorder',8,true);

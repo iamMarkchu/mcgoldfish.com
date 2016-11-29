@@ -2,16 +2,14 @@
 	<div class="list-heading">
 		<h3><i class="fa fa-tags h-icon" aria-hidden="true"></i>热门标签</h3>
 	</div>
-	<div class="list-body">
-		<ul>
-			<{foreach from=$hotTagList item=item}>
-			<li>
-				<a href="<{$item.requestpath}>">
-					<{$item.displayname}>
-				</a>
-			</li>
-			<{/foreach}>
-		</ul>
-	</div>
+	<ul class="list-body">
+		<{foreach from=$hotTagList item=item}>
+		<li>
+			<a href="<{$item.requestpath}>">
+				<{$item.displayname}>
+			</a>
+		</li>
+		<{/foreach}>
+	</ul>
 	<div class="clear-fix"></div>
 </div>

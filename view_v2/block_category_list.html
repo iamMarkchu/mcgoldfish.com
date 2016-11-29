@@ -9,15 +9,13 @@
 			<{/if}>
 		</h3>
 	</div>
-	<div class="list-body">
-		<ul>
-			<{foreach from=$hotCategory item=item key=k}>
-			     <li>
-					<a href="<{$item.requestpath}>">
-						<span class="label-color-<{$k}>"><{$item.aliasesname}></span><{$item.displayname}>(<{$item.articlecount}>)
-					</a>
-				</li>
-			<{/foreach}>
-		</ul>
-	</div>
+	<ul class="list-body">
+		<{foreach from=$hotCategory item=item key=k}>
+		     <li>
+				<a href="<{$item.requestpath}>">
+					<span class="label-color-<{$k}>"><{$item.aliasesname}></span><{$item.displayname}>(<{$item.articlecount}>)
+				</a>
+			</li>
+		<{/foreach}>
+	</ul>
 </div>

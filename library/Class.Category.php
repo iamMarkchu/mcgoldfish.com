@@ -39,4 +39,10 @@ class Category{
 		$tmpResult = $GLOBALS['db']->getRows($sql);
 		return $tmpResult;
 	}
+
+	public function getCategoryForStatic($ids){
+		$sql = "select c.id,c.displayname,c.parentcategoryid,c.articlecount,c.aliasesname,ru.`requestpath` from category as c left join rewrite_url as ru on c.id = ru.optdataid where ru.modeltype = 'category' and ru.`status` = 'yes' and c.id in (".implode(",", $ids).") and ru.isjump='NO'";
+		$tmpResult = $GLOBALS['db']->getRows($sql);
+		return $tmpResult;
+	}
 }
