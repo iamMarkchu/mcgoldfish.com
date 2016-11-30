@@ -38,7 +38,7 @@ $tpl->assign('nextPreArticleList', $nextPreArticleList);
  */
 $comment = new Comment;
 $commentList = $comment->getCommentList($optDataId);
-$tpl->assign('showComment', false);
+$tpl->assign('showComment', true);
 $tpl->assign('commentCount',count($commentList));
 $tpl->assign('commentList',$commentList);
 
@@ -99,6 +99,11 @@ if($isNeedHighLight){
 					  '/js/app.js'
 				   ];
 	$default_js['footer'] = array_merge($default_js['footer'],$HighLightJs);
+}
+$isNeedDuoShuo = true;
+if($isNeedDuoShuo){
+	$duoShuoJs = ['/js/duoshuo.js'];
+	$default_js['footer'] = array_merge($default_js['footer'],$duoShuoJs);	
 }
 
 $page_header = array(
