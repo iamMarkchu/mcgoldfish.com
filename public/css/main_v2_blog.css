@@ -5,7 +5,7 @@
 .article-panel ul li{float: left;margin-right: 20px;}
 .article-panel ul li span,.article-panel ul li i.fa{ font-size: .8em; }
 .article-panel .panel-body{padding: 15px 0;}
-.article-panel .panel-body article{font-size: 1em;}
+.article-panel .panel-body article{font-size: .8em;}
 .article-panel .panel-body article p{margin-bottom: 10px;word-break: break-all;}
 .article-panel .panel-body article h2{font-size: 24px;margin:20px 0 10px 0;font-weight: 500;}
 .article-panel .panel-body article a {color: #22b38a;}

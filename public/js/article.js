@@ -1,11 +1,13 @@
 $(function(){
-	if($('pre').length > 0){
-		// $('pre code').each(function(i, block) {
-	 	//    	hljs.highlightBlock(block);
-	 	//  	});
-	 	//  	
-	 	hljs.initHighlightingOnLoad();
-	}
+	 SyntaxHighlighter.autoloader(
+		    ['js','jscript','javascript','/plugins/syntaxhighlighter/scripts/shBrushJScript.js'],
+		    ['bash','shell','/plugins/syntaxhighlighter/scripts/shBrushBash.js'],
+		    ['css','/plugins/syntaxhighlighter/scripts/shBrushCss.js'],
+		    ['xml','html','/plugins/syntaxhighlighter/scripts/shBrushXml.js'],
+		    ['sql','/plugins/syntaxhighlighter/scripts/shBrushSql.js'],
+		    ['php','/plugins/syntaxhighlighter/scripts/shBrushPhp.js']
+	    ); 
+	SyntaxHighlighter.all();
 	$('.comment-submit').click(function(){
 		$('.commment-form').submit();
 	});

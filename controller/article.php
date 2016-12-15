@@ -91,12 +91,12 @@ $isNeedHighLight = true;
 if($isNeedHighLight){
 	$HighLightCss = [
 					  '/css/main_v2_blog.css?ver='. VER,
-					  'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css'
+					  '/plugins/syntaxhighlighter/styles/shCoreDefault.css?12312=123',
 					];
 	$default_css = array_merge($default_css,$HighLightCss);
 	$HighLightJs = [
-					  'http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js',
-					  '/js/app.js'
+					  '/js/app.js',
+					  '/plugins/syntaxhighlighter/script/syntaxhighlighter.js'
 				   ];
 	$default_js['footer'] = array_merge($default_js['footer'],$HighLightJs);
 }
@@ -114,15 +114,15 @@ $page_header = array(
 $tpl->assign('page_header',$page_header);
 
 $tpl->template_dir = INCLUDE_ROOT. "view_v2";
-ob_start();
+//ob_start();
 $tpl->display('article.html');
-$content = ob_get_contents();
+//$content = ob_get_contents();
 //$order   = array("\r\n", "\n", "\r");
 //$content=str_replace($order, "", $content);
 //$content = preg_replace("/[\s]+/is"," ",$content);
-ob_end_clean();
-$modtimestamp = "<!-- last mod time:".date("Y-m-d H:i:s")." -->\n";
-echo  $content.$modtimestamp;
+//ob_end_clean();
+//$modtimestamp = "<!-- last mod time:".date("Y-m-d H:i:s")." -->\n";
+//echo  $content.$modtimestamp;
 
 
 
